@@ -14,6 +14,6 @@ public class PrivateVariables : MonoBehaviour
         GlobalScore = GlobalScore;
     }
 
-    public int GlobalScore { get => globalScore; set { globalScore = value; playerManager.UpdateScore(value); } }
+    public int GlobalScore { get => globalScore; set { globalScore = value; if (playerManager != null) { playerManager.UpdateScore(value); } } }
 
 }

@@ -3,9 +3,9 @@
         <ui:VisualElement name="HeaderVE" style="flex-grow: 1;" />
         <ui:VisualElement style="flex-grow: 1; height: 85%;">
             <ui:Label tabindex="-1" text="Question 1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Q1" style="position: absolute; top: 298px; left: 72px; height: 80px; width: 237px; font-size: 68px;" />
-            <ui:Label tabindex="-1" text="Question 2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Q2" style="position: absolute; top: 309px; left: 638px; height: 80px; width: 237px; font-size: 68px;" />
-            <ui:Label tabindex="-1" text="Answer" parse-escape-sequences="true" display-tooltip-when-elided="true" name="A1" style="position: absolute; top: 463px; left: 411px; height: 80px; width: 237px; font-size: 68px;" />
-            <ui:TextField picking-mode="Ignore" label="Text Field" name="InputHolder" style="font-size: 53px;" />
+            <ui:Label tabindex="-1" text="Question 2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Q2" style="position: absolute; top: 293px; left: 638px; height: 80px; width: 237px; font-size: 68px;" />
+            <ui:Label tabindex="-1" text="Answer" parse-escape-sequences="true" display-tooltip-when-elided="true" name="A1" style="position: absolute; top: 43px; left: 419px; height: 80px; width: 237px; font-size: 68px;" />
+            <ui:TextField picking-mode="Ignore" label="Text Field" name="InputHolder" style="font-size: 53px; position: absolute; width: 756px; top: 688px; left: 116px;" />
             <ui:Button text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B1" style="position: absolute; top: 837px; left: 153px; height: 125px; width: 161px; font-size: 35px;" />
             <ui:Button text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B2" style="position: absolute; top: 837px; left: 408px; height: 125px; width: 161px; font-size: 35px;" />
             <ui:Button text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B3" style="position: absolute; top: 847px; left: 703px; height: 125px; width: 161px; font-size: 35px;" />
