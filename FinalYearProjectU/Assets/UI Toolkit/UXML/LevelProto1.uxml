@@ -1,9 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/USS/FirstButton.uss?fileID=7433441132597879392&amp;guid=b061b1eedafabb14d84ee3bfbc7f11ae&amp;type=3#FirstButton" />
-    <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
-        <ui:VisualElement style="flex-grow: 1; background-color: rgb(140, 0, 0); height: 10%;">
-            <ui:Label tabindex="-1" text="Score: " parse-escape-sequences="true" display-tooltip-when-elided="true" name="GlobalScore" style="font-size: 46px;" />
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 1; height: 90%;" />
-    </ui:VisualElement>
-</ui:UXML>

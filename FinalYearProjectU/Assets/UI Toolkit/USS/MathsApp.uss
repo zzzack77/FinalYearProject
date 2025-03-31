@@ -1,0 +1,84 @@
+.numberPadButton {
+    width: 200px;
+    height: 200px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-left-radius: 58px;
+    border-top-right-radius: 58px;
+    border-bottom-right-radius: 58px;
+    border-bottom-left-radius: 58px;
+    border-top-width: 6px;
+    border-right-width: 6px;
+    border-bottom-width: 11px;
+    border-left-width: 6px;
+    background-color: rgba(221, 221, 221, 0.81);
+    font-size: 64px;
+    -unity-font-style: bold;
+}
+
+.questionLabel {
+    font-size: 193px;
+    -unity-font-style: bold;
+}
+
+.inputVE {
+    background-color: rgba(60, 60, 60, 0.32);
+    border-top-left-radius: 42px;
+    border-top-right-radius: 42px;
+    border-bottom-right-radius: 42px;
+    border-bottom-left-radius: 42px;
+    font-size: 87px;
+    -unity-font-style: bold;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 7px;
+    border-right-width: 8px;
+    border-bottom-width: 13px;
+    border-left-width: 7px;
+}
+
+.button-grow {
+    transition: all 0.3s ease-in-out;
+}
+
+.button-grow:hover {
+    transition-property: scale, background-color;
+    transition-duration: 0.25s, 0.25s;
+    scale: 1.05 1.05;
+    background-color: rgb(245, 245, 245);
+}
+
+.mathsTypeSelector {
+    width: 987px;
+    height: 235px;
+    background-color: rgb(36, 67, 29);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 11px;
+    border-right-width: 11px;
+    border-bottom-width: 21px;
+    border-left-width: 11px;
+    font-size: 120px;
+    color: rgb(255, 255, 255);
+}
+
+.button-mainMenuGrow {
+    transition: all 0.3s ease-in-out;
+}
+
+.button-mainMenuGrow:hover {
+    transition-property: scale, background-color;
+    transition-duration: 0.25s, 0.25s;
+    scale: 1.05 1.05;
+    background-color: rgb(17, 31, 13);
+}

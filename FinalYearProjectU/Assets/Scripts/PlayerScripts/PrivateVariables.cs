@@ -10,6 +10,10 @@ public class PrivateVariables : MonoBehaviour
     private int globalScore;
     private string playerName;
 
+    private int operatorType;
+    private int maxNumRange;
+
+
     private void Start()
     {
         playerManager = GetComponent<PlayerManager>();
@@ -34,5 +38,7 @@ public class PrivateVariables : MonoBehaviour
             playerDataManager.SetPlayerName(value);
         }
     } 
+    public int MaxNumRange { get => maxNumRange; set => maxNumRange = value; }
+    public int OperatorType {  get => operatorType; set => operatorType = value; }
 
 }
