@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Label tabindex="-1" text="Please Enter Your Name: " parse-escape-sequences="true" display-tooltip-when-elided="true" style="position: absolute; top: 397px; left: 121px; font-size: 52px;" />
+    <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" style="position: absolute; top: 196px; left: 185px; height: 59px; width: 499px;" />
+</ui:UXML>
