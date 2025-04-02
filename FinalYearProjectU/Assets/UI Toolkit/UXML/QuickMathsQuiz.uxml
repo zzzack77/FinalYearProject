@@ -1,14 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/USS/MathsApp.uss?fileID=7433441132597879392&amp;guid=6b080086b4c1a7d4487349ad733d370a&amp;type=3#MathsApp" />
     <ui:VisualElement name="BG" style="background-color: rgb(147, 159, 145); align-items: stretch; width: 100%; height: 100%; max-width: 100%; min-width: 100%; max-height: 100%; min-height: 100%; flex-basis: 100%; position: relative; left: 0; top: 0; right: 0; bottom: 0; flex-grow: 1;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 100%; height: 100%;" />
         <ui:VisualElement name="HeaderVE" style="flex-grow: 1; flex-direction: row; max-height: 10%; height: 10%; min-height: 10%;">
-            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 6%; max-width: -8%; min-width: 15%;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 6%; max-width: 15%; min-width: 15%;">
                 <ui:Button name="QuitB" style="width: 125px; height: 125px; position: absolute; top: 21px; left: 14px; background-image: url(&quot;project://database/Assets/Art/UI/QuitX.png?fileID=2800000&amp;guid=3bb447d737246be41af5f6e27c6d74ef&amp;type=3#QuitX&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
             </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 80%; max-width: 80%; min-width: 70%; margin-top: 27px; align-items: auto;">
-                <ui:ProgressBar value="22" style="-unity-text-align: middle-left; justify-content: center; max-height: 115px; height: 67px; position: absolute; top: 17px; left: 2px; width: 746px; scale: 1 3; -unity-text-outline-width: 2px; -unity-text-outline-color: rgba(0, 0, 0, 0.89);" />
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 70%; max-width: 70%; min-width: 70%; align-items: auto; padding-top: 35px; padding-right: 0; padding-bottom: 66px; padding-left: 0;">
+                <ui:VisualElement name="TimerBackground" class="timerBackground" style="flex-grow: 1; width: 100%;">
+                    <ui:VisualElement name="TimerBar" style="flex-grow: 1; width: 100%; background-color: rgb(16, 99, 7); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; align-self: flex-start; align-items: flex-start;" />
+                </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 10%; max-width: 10%; min-width: 15%;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 15%; max-width: 15%; min-width: 15%;">
                 <ui:Button name="PauseB" style="width: 125px; height: 125px; position: absolute; top: 21px; left: 14px; background-image: url(&quot;project://database/Assets/Art/UI/Pause.png?fileID=2800000&amp;guid=0a9aa8fd5d4262f478592ee239bc8f61&amp;type=3#Pause&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
             </ui:VisualElement>
         </ui:VisualElement>
@@ -17,21 +20,21 @@
             <ui:Label tabindex="-1" text="Y" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Q2" class="questionLabel" style="position: absolute; top: 250px; left: 630px; height: 150px; width: 350px; -unity-text-align: middle-center;" />
             <ui:Label tabindex="-1" text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QOperator" class="questionLabel" style="position: absolute; top: 250px; left: 377px; height: 150px; width: 350px; -unity-text-align: middle-center;" />
             <ui:Label tabindex="-1" text="What is" parse-escape-sequences="true" display-tooltip-when-elided="true" name="A1" style="position: absolute; top: 23px; left: 289px; height: 144px; width: 505px; font-size: 125px; -unity-font-style: bold;" />
-            <ui:VisualElement class="inputVE" style="flex-grow: 1; position: absolute; height: 197px; width: 931px; top: 600px; left: 78px; align-self: center; justify-content: center;">
-                <ui:Label tabindex="-1" name="InputLabel" style="-unity-text-align: middle-center; align-self: center; font-size: 147px; width: 850px; max-width: 850px; min-width: 850px; height: 166px; max-height: 163px; min-height: 160px;" />
+            <ui:VisualElement name="InputVE" class="inputVE" style="flex-grow: 1; position: absolute; height: 197px; width: 931px; top: 600px; left: 78px; align-self: center; justify-content: center;">
+                <ui:Label tabindex="-1" name="InputLabel" style="-unity-text-align: middle-right; align-self: center; font-size: 147px; width: 850px; max-width: 850px; min-width: 850px; height: 166px; max-height: 163px; min-height: 160px;" />
             </ui:VisualElement>
-            <ui:Button text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B1" class="numberPadButton button-grow" style="position: absolute; top: 840px; left: 200px;" />
-            <ui:Button text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B2" class="numberPadButton button-grow" style="position: absolute; top: 840px; left: 440px;" />
-            <ui:Button text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B3" class="numberPadButton button-grow" style="position: absolute; top: 840px; left: 680px;" />
-            <ui:Button text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B4" class="numberPadButton button-grow" style="position: absolute; top: 1060px; left: 200px;" />
-            <ui:Button text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B5" class="numberPadButton button-grow" style="position: absolute; top: 1060px; left: 440px;" />
-            <ui:Button text="6" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B6" class="numberPadButton button-grow" style="position: absolute; top: 1060px; left: 680px;" />
-            <ui:Button text="7" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B7" class="numberPadButton button-grow" style="position: absolute; top: 1280px; left: 200px;" />
-            <ui:Button text="8" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B8" class="numberPadButton button-grow" style="position: absolute; top: 1280px; left: 440px;" />
-            <ui:Button text="9" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B9" class="numberPadButton button-grow" style="position: absolute; top: 1280px; left: 680px;" />
-            <ui:Button text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B0" class="numberPadButton button-grow" style="position: absolute; top: 1500px; left: 440px;" />
-            <ui:Button text="Clear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ClearB" class="numberPadButton button-grow" style="position: absolute; top: 1500px; left: 200px; font-size: 54px;" />
-            <ui:Button text="Enter" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EnterB" class="numberPadButton button-grow" style="position: absolute; top: 1500px; left: 680px; font-size: 54px;" />
+            <ui:Button text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B1" class="numberPadButton button-numPadTransition" style="position: absolute; top: 840px; left: 200px;" />
+            <ui:Button text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B2" class="numberPadButton button-numPadTransition" style="position: absolute; top: 840px; left: 440px;" />
+            <ui:Button text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B3" class="numberPadButton button-numPadTransition" style="position: absolute; top: 840px; left: 680px;" />
+            <ui:Button text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B4" class="numberPadButton button-numPadTransition" style="position: absolute; top: 1060px; left: 200px;" />
+            <ui:Button text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B5" class="numberPadButton button-numPadTransition" style="position: absolute; top: 1060px; left: 440px;" />
+            <ui:Button text="6" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B6" class="numberPadButton button-numPadTransition" style="position: absolute; top: 1060px; left: 680px;" />
+            <ui:Button text="7" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B7" class="numberPadButton button-numPadTransition" style="position: absolute; top: 1280px; left: 200px;" />
+            <ui:Button text="8" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B8" class="numberPadButton button-numPadTransition" style="position: absolute; top: 1280px; left: 440px;" />
+            <ui:Button text="9" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B9" class="numberPadButton button-numPadTransition" style="position: absolute; top: 1280px; left: 680px;" />
+            <ui:Button text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B0" class="numberPadButton button-numPadTransition" style="position: absolute; top: 1500px; left: 440px;" />
+            <ui:Button text="Clear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ClearB" class="numberPadButton button-numPadTransition" style="position: absolute; top: 1500px; left: 200px; font-size: 54px;" />
+            <ui:Button text="Enter" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EnterB" class="numberPadButton button-numPadTransition" style="position: absolute; top: 1500px; left: 680px; font-size: 54px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

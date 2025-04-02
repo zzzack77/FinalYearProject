@@ -23,7 +23,25 @@
     -unity-font-style: bold;
 }
 
+.timerBackground {
+    transition: scale 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    border-top-width: 7px;
+    border-right-width: 7px;
+    border-bottom-width: 7px;
+    border-left-width: 7px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    background-color: rgb(207, 209, 207);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
 .inputVE {
+    transition: scale 0.25s ease-in-out, background-color 0.25s ease-in-out;
     background-color: rgba(60, 60, 60, 0.32);
     border-top-left-radius: 42px;
     border-top-right-radius: 42px;
@@ -40,16 +58,16 @@
     border-bottom-width: 13px;
     border-left-width: 7px;
 }
-
-.button-grow {
-    transition: all 0.3s ease-in-out;
+.VECorrectAnswer {
+    transition-property: scale, background-color;
+    scale: 1.05;
+    background-color: rgb(16, 99, 7);
 }
 
-.button-grow:hover {
+.VEWrongAnswer {
     transition-property: scale, background-color;
-    transition-duration: 0.25s, 0.25s;
-    scale: 1.05 1.05;
-    background-color: rgb(245, 245, 245);
+    scale: 1.05;
+    background-color: rgb(70, 5, 5);
 }
 
 .mathsTypeSelector {
@@ -72,13 +90,40 @@
     color: rgb(255, 255, 255);
 }
 
-.button-mainMenuGrow {
+.button-numPadTransition {
     transition: all 0.3s ease-in-out;
 }
 
-.button-mainMenuGrow:hover {
+.button-numPadTransition:hover {
+    transition-property: scale, background-color;
+    transition-duration: 0.25s, 0.25s;
+    scale: 1.05 1.05;
+    background-color: rgb(245, 245, 245);
+}
+
+.button-numPadTransition:active {
+    transition: all 0.05s ease-in-out;
+    background-color: rgb(135, 135, 135);
+    scale: 1;
+}
+
+.button-mathsTypeSelectorTransition {
+    transition: all 0.3s ease-in-out;
+}
+
+.button-mathsTypeSelectorTransition:hover {
     transition-property: scale, background-color;
     transition-duration: 0.25s, 0.25s;
     scale: 1.05 1.05;
     background-color: rgb(17, 31, 13);
+}
+
+.button-generalGrowTransition {
+    transition: all 0.3s ease-in-out;
+}
+
+.button-generalGrowTransition:hover {
+    transition-property: scale;
+    transition-duration: 0.25s, 0.25s;
+    scale: 1.05 1.05;
 }

@@ -12,6 +12,7 @@ public class PrivateVariables : MonoBehaviour
 
     private int operatorType;
     private int maxNumRange;
+    private float timeRemaining;
 
 
     private void Start()
@@ -40,5 +41,6 @@ public class PrivateVariables : MonoBehaviour
     } 
     public int MaxNumRange { get => maxNumRange; set => maxNumRange = value; }
     public int OperatorType {  get => operatorType; set => operatorType = value; }
+    public float TimeRemaining { get => timeRemaining; set => timeRemaining = value; }
 
 }
