@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PrivateVariables : MonoBehaviour
 {
-    private PlayerManager playerManager;
+    private QuickQuizManager quickQuizManager;
     private PlayerDataManager playerDataManager;
 
     private int globalScore;
@@ -17,7 +17,7 @@ public class PrivateVariables : MonoBehaviour
 
     private void Start()
     {
-        playerManager = GetComponent<PlayerManager>();
+        quickQuizManager = GetComponent<QuickQuizManager>();
         playerDataManager = GetComponent<PlayerDataManager>();
 
         LoadDataToPrivateVariables();
@@ -28,7 +28,7 @@ public class PrivateVariables : MonoBehaviour
         GlobalScore = playerDataManager.getPlayerScore();
 
     }
-    public int GlobalScore { get => globalScore; set { globalScore = value; if (playerManager != null) { playerManager.UpdateScore(value); } } }
+    public int GlobalScore { get => globalScore; set { globalScore = value; if (quickQuizManager != null) { quickQuizManager.UpdateScore(value); } } }
     public string PlayerName
     {
         get => playerName;

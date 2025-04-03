@@ -70,7 +70,27 @@
     background-color: rgb(70, 5, 5);
 }
 
-.mathsTypeSelector {
+
+.button-numPadTransition {
+    transition: all 0.3s ease-in-out;
+}
+
+.button-numPadTransition:hover {
+    transition-property: scale, background-color;
+    transition-duration: 0.25s, 0.25s;
+    scale: 1.05 1.05;
+    background-color: rgb(245, 245, 245);
+}
+
+.button-numPadTransition:active {
+    transition: all 0.05s ease-in-out;
+    background-color: rgb(135, 135, 135);
+    scale: 1;
+}
+
+
+.button-mathsTypeSelector {
+    transition: scale 0.25s ease-in-out, background-color 0.25s ease-in-out;
     width: 987px;
     height: 235px;
     background-color: rgb(36, 67, 29);
@@ -90,28 +110,7 @@
     color: rgb(255, 255, 255);
 }
 
-.button-numPadTransition {
-    transition: all 0.3s ease-in-out;
-}
-
-.button-numPadTransition:hover {
-    transition-property: scale, background-color;
-    transition-duration: 0.25s, 0.25s;
-    scale: 1.05 1.05;
-    background-color: rgb(245, 245, 245);
-}
-
-.button-numPadTransition:active {
-    transition: all 0.05s ease-in-out;
-    background-color: rgb(135, 135, 135);
-    scale: 1;
-}
-
-.button-mathsTypeSelectorTransition {
-    transition: all 0.3s ease-in-out;
-}
-
-.button-mathsTypeSelectorTransition:hover {
+.button-mathsTypeSelector:hover {
     transition-property: scale, background-color;
     transition-duration: 0.25s, 0.25s;
     scale: 1.05 1.05;

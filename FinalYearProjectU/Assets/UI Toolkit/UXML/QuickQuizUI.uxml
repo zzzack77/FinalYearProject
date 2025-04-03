@@ -4,16 +4,14 @@
         <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 100%; height: 100%;" />
         <ui:VisualElement name="HeaderVE" style="flex-grow: 1; flex-direction: row; max-height: 10%; height: 10%; min-height: 10%;">
             <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 6%; max-width: 15%; min-width: 15%;">
-                <ui:Button name="QuitB" style="width: 125px; height: 125px; position: absolute; top: 21px; left: 14px; background-image: url(&quot;project://database/Assets/Art/UI/QuitX.png?fileID=2800000&amp;guid=3bb447d737246be41af5f6e27c6d74ef&amp;type=3#QuitX&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+                <ui:Button name="PauseB" class="button-generalGrowTransition" style="width: 125px; height: 125px; position: absolute; top: 21px; left: 14px; background-image: url(&quot;project://database/Assets/Art/UI/Pause.png?fileID=2800000&amp;guid=0a9aa8fd5d4262f478592ee239bc8f61&amp;type=3#Pause&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
             </ui:VisualElement>
             <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 70%; max-width: 70%; min-width: 70%; align-items: auto; padding-top: 35px; padding-right: 0; padding-bottom: 66px; padding-left: 0;">
                 <ui:VisualElement name="TimerBackground" class="timerBackground" style="flex-grow: 1; width: 100%;">
                     <ui:VisualElement name="TimerBar" style="flex-grow: 1; width: 100%; background-color: rgb(16, 99, 7); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; align-self: flex-start; align-items: flex-start;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 15%; max-width: 15%; min-width: 15%;">
-                <ui:Button name="PauseB" style="width: 125px; height: 125px; position: absolute; top: 21px; left: 14px; background-image: url(&quot;project://database/Assets/Art/UI/Pause.png?fileID=2800000&amp;guid=0a9aa8fd5d4262f478592ee239bc8f61&amp;type=3#Pause&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
-            </ui:VisualElement>
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 15%; max-width: 15%; min-width: 15%;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; height: 90%; min-height: 90%; max-height: 90%;">
             <ui:Label tabindex="-1" text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Q1" class="questionLabel" style="position: absolute; top: 250px; left: 88px; height: 150px; width: 350px; -unity-text-align: middle-center; justify-content: center;" />

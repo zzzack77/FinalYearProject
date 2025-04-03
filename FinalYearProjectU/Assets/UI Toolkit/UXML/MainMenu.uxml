@@ -3,19 +3,15 @@
     <ui:VisualElement name="BG" style="background-color: rgb(147, 159, 145); align-items: stretch; width: 100%; height: 100%; max-width: 100%; min-width: 100%; max-height: 100%; min-height: 100%; flex-basis: 100%; position: relative; left: 0; top: 0; right: 0; bottom: 0; flex-grow: 1;">
         <ui:VisualElement name="HeaderVE" style="flex-grow: 1; flex-direction: row; max-height: 10%; height: 10%; min-height: 10%;">
             <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 6%; max-width: -8%; min-width: 15%;">
-                <ui:Button name="QuitB" style="width: 125px; height: 125px; position: absolute; top: 21px; left: 14px; background-image: url(&quot;project://database/Assets/Art/UI/BackArrow.jpg?fileID=2800000&amp;guid=9ecdbb18702537341b218470aeeaa0ec&amp;type=3#BackArrow&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(0, 0, 0, 0.06); border-right-color: rgba(0, 0, 0, 0.06); border-top-color: rgba(0, 0, 0, 0.06); border-bottom-color: rgba(0, 0, 0, 0.06); font-size: 79px;" />
+                <ui:Button name="QuitB" style="width: 125px; height: 125px; position: absolute; top: 21px; left: 14px; background-image: url(&quot;project://database/Assets/Art/UI/BackArrow.png?fileID=2800000&amp;guid=f8d9a43c3be7e6c43a5f288ba85f38a0&amp;type=3#BackArrow&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(0, 0, 0, 0.06); border-right-color: rgba(0, 0, 0, 0.06); border-top-color: rgba(0, 0, 0, 0.06); border-bottom-color: rgba(0, 0, 0, 0.06); font-size: 79px;" />
             </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 80%; max-width: 80%; min-width: 70%; margin-top: 27px; align-items: auto;">
-                <ui:ProgressBar value="22" style="-unity-text-align: middle-left; justify-content: center; max-height: 115px; height: 67px; position: absolute; top: 17px; left: 2px; width: 746px; scale: 1 3; -unity-text-outline-width: 2px; -unity-text-outline-color: rgba(0, 0, 0, 0.89);" />
-            </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 10%; max-width: 10%; min-width: 15%;">
-                <ui:Button name="PauseB" style="width: 125px; height: 125px; position: absolute; top: 21px; left: 14px; background-image: url(&quot;project://database/Assets/Art/UI/Pause.png?fileID=2800000&amp;guid=0a9aa8fd5d4262f478592ee239bc8f61&amp;type=3#Pause&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
-            </ui:VisualElement>
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 80%; max-width: 80%; min-width: 70%; margin-top: 27px; align-items: auto;" />
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 10%; max-width: 10%; min-width: 15%;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; height: 90%; min-height: 90%; max-height: 90%;" />
-        <ui:Button text="Addition" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AdditionB" class="mathsTypeSelector button-mainMenuGrow" style="position: absolute; top: 344px; left: 38px;" />
-        <ui:Button text="Subtraction" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SubtractionB" class="mathsTypeSelector button-mainMenuGrow" style="position: absolute; top: 633px; left: 30px;" />
-        <ui:Button text="Multiplication" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MultiplicationB" class="mathsTypeSelector button-mainMenuGrow" style="position: absolute; top: 936px; left: 39px;" />
-        <ui:Button text="Division" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DivisionB" class="mathsTypeSelector button-mainMenuGrow" style="position: absolute; top: 1242px; left: 34px;" />
+        <ui:Button text="Addition" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AdditionB" class="button-mathsTypeSelector" style="position: absolute; top: 344px; left: 38px;" />
+        <ui:Button text="Subtraction" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SubtractionB" class="button-mathsTypeSelector" style="position: absolute; top: 633px; left: 30px;" />
+        <ui:Button text="Multiplication" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MultiplicationB" class="button-mathsTypeSelector" style="position: absolute; top: 936px; left: 39px;" />
+        <ui:Button text="Division" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DivisionB" class="button-mathsTypeSelector" style="position: absolute; top: 1242px; left: 34px;" />
     </ui:VisualElement>
 </ui:UXML>

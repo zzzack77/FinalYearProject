@@ -6,14 +6,15 @@ using UnityEngine;
 
 using UnityEngine.UIElements;
 
-public class PlayerManager : MonoBehaviour
+public class QuickQuizManager : MonoBehaviour
 {
     private PrivateVariables privateVariables;
+    private MenuManager menuManager;
     public UIDocument uiDocument;
-    public VisualTreeAsset additionUI;
-    public VisualTreeAsset test;
+    
 
     private Label globalScoreL;
+    private Button pauseB;
     private Button[] numPadButtons = new Button[10];
 
     private Label Operator;
@@ -42,35 +43,40 @@ public class PlayerManager : MonoBehaviour
 
     private bool isInputDestroyable;
     private bool isTimeOn;
-    private void Awake()
-    {
-        ShowUI(additionUI);
-    }
-    void Start()
+    
+
+    void OnEnable()
     {
         privateVariables = gameObject.GetComponent<PrivateVariables>();
+        menuManager = gameObject.GetComponent<MenuManager>();
         uiDocument = GetComponent<UIDocument>();
 
-        privateVariables.OperatorType = 0;
-        privateVariables.MaxNumRange = 100;
-        privateVariables.TimeRemaining = 20;
+        if (privateVariables != null)
+        {
+            privateVariables.OperatorType = 0;
+            privateVariables.MaxNumRange = 100;
+            privateVariables.TimeRemaining = 20;
+        }
+        else {Debug.LogError("Private variabels didnt assign correctly"); this.enabled = false;}
 
-        
 
         OnStartMathsType();
     }
+    
     public void OnStartMathsType()
     {
         if (uiDocument != null)
         {
             // Root
             VisualElement root = uiDocument.rootVisualElement;
+            Debug.Log(root.name);
 
             // Initialize score and set empty text
             globalScoreL = root.Q<Label>("GlobalScore");
             if (globalScoreL != null) { globalScoreL.text = "Score: "; }
 
-
+            pauseB = root.Q<Button>("PauseB");
+            pauseB.clicked += () => OnPausePress();
 
             // Operator handeler
             Operator = root.Q<Label>("QOperator");
@@ -140,15 +146,10 @@ public class PlayerManager : MonoBehaviour
     }
     void ResetRandomQuestions()
     {
-        if (isTimeOn)
-        {
-            ResetTimeHandeler();
-        }
-        else
-        {
-            StartResetTimeHandeler();
-        }
+        if (isTimeOn) ResetTimeHandeler();
+        else StartResetTimeHandeler();
         
+        // Set random questions and store answer for each operator type
         if (Q1 != null && Q2 != null)
         {
             storedQuestion1 = Random.Range(0, privateVariables.MaxNumRange);
@@ -197,11 +198,18 @@ public class PlayerManager : MonoBehaviour
                 currentCorrectAnswer = storedQuestion1;
                 return;
             }
-            
-            
-
         }
         else { Debug.LogError("Random Questions unable to be set"); }
+    }
+    void OnPausePress()
+    {
+        isTimeOn = false;
+        OnExitPress();
+    }
+    void OnExitPress()
+    {
+        menuManager.LoadUIByContainerIndex(0);
+        this.enabled = false;
     }
 
     void OnButtonPress(int buttonNumber)
@@ -221,18 +229,10 @@ public class PlayerManager : MonoBehaviour
         currentStoredNumber = 0;
         isInputDestroyable = false;
     }
-    void OnEnterPress()
-    {
-        CheckAnswer();
-    }
+    void OnEnterPress() { CheckAnswer(); }
     void CheckAnswer()
     {
-        if (currentCorrectAnswer == currentStoredNumber)
-        {
-            StartCoroutine(CorrectAnswer());
-            // Correct answer
-            
-        }
+        if (currentCorrectAnswer == currentStoredNumber) StartCoroutine(CorrectAnswer());
         else { StartCoroutine(WrongAnswer()); }
     }
     void GetCurrentStoredNumber(int value) { currentStoredNumber = (currentStoredNumber * 10) + value; }
@@ -244,10 +244,7 @@ public class PlayerManager : MonoBehaviour
         {
             globalScoreL = uiDocument.rootVisualElement.Q<Label>("GlobalScore");
 
-            if (globalScoreL != null)
-            {
-                globalScoreL.text = "Score: " + score;
-            }
+            if (globalScoreL != null) globalScoreL.text = "Score: " + score;
         }
     }
     public void ShowUI(VisualTreeAsset uiAsset)
@@ -292,7 +289,6 @@ public class PlayerManager : MonoBehaviour
         {
             for (int i = 0; i < 2; i++)
             {
-
                 if (isInputDestroyable)
                 {
                     InputVE.AddToClassList("VECorrectAnswer");
@@ -309,8 +305,8 @@ public class PlayerManager : MonoBehaviour
             ResetRandomQuestions();
             if (isInputDestroyable) OnClearPress();
         }
-        
     }
+
     private IEnumerator TimerHandeler()
     {
         if (TimerBackground != null && TimerBar != null)
