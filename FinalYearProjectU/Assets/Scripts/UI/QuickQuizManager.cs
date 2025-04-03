@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class QuickQuizManager : MonoBehaviour
 {
     private PrivateVariables privateVariables;
-    private MenuManager menuManager;
+    private UILoader menuManager;
     public UIDocument uiDocument;
     
 
@@ -48,12 +48,12 @@ public class QuickQuizManager : MonoBehaviour
     void OnEnable()
     {
         privateVariables = gameObject.GetComponent<PrivateVariables>();
-        menuManager = gameObject.GetComponent<MenuManager>();
+        menuManager = gameObject.GetComponent<UILoader>();
         uiDocument = GetComponent<UIDocument>();
 
         if (privateVariables != null)
         {
-            privateVariables.OperatorType = 0;
+            privateVariables.OperatorType = 3;
             privateVariables.MaxNumRange = 100;
             privateVariables.TimeRemaining = 20;
         }

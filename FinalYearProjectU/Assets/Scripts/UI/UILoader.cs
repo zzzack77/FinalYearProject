@@ -4,7 +4,7 @@ using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MenuManager : MonoBehaviour
+public class UILoader : MonoBehaviour
 {
     private PrivateVariables privateVariables;
     private QuickQuizManager quickQuizManager;
