@@ -53,9 +53,13 @@ public class QuickQuizManager : MonoBehaviour
 
         if (privateVariables != null)
         {
-            privateVariables.OperatorType = 3;
-            privateVariables.MaxNumRange = 100;
-            privateVariables.TimeRemaining = 20;
+            // If time remaining hasn't been set, revert to defult setings
+            if (privateVariables.TimeRemaining == 0)
+            {
+                privateVariables.OperatorType = 0;
+                privateVariables.MaxNumRange = 100;
+                privateVariables.TimeRemaining = 20;
+            }
         }
         else {Debug.LogError("Private variabels didnt assign correctly"); this.enabled = false;}
 

@@ -1,23 +1,3 @@
-.numberPadButton {
-    width: 200px;
-    height: 200px;
-    border-left-color: rgb(0, 0, 0);
-    border-right-color: rgb(0, 0, 0);
-    border-top-color: rgb(0, 0, 0);
-    border-bottom-color: rgb(0, 0, 0);
-    border-top-left-radius: 58px;
-    border-top-right-radius: 58px;
-    border-bottom-right-radius: 58px;
-    border-bottom-left-radius: 58px;
-    border-top-width: 6px;
-    border-right-width: 6px;
-    border-bottom-width: 11px;
-    border-left-width: 6px;
-    background-color: rgba(221, 221, 221, 0.81);
-    font-size: 64px;
-    -unity-font-style: bold;
-}
-
 .questionLabel {
     font-size: 193px;
     -unity-font-style: bold;
@@ -58,6 +38,7 @@
     border-bottom-width: 13px;
     border-left-width: 7px;
 }
+
 .VECorrectAnswer {
     transition-property: scale, background-color;
     scale: 1.05;
@@ -70,30 +51,45 @@
     background-color: rgb(70, 5, 5);
 }
 
-
-.button-numPadTransition {
+.numberPadButton {
     transition: all 0.3s ease-in-out;
+    width: 200px;
+    height: 200px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-left-radius: 58px;
+    border-top-right-radius: 58px;
+    border-bottom-right-radius: 58px;
+    border-bottom-left-radius: 58px;
+    border-top-width: 6px;
+    border-right-width: 6px;
+    border-bottom-width: 11px;
+    border-left-width: 6px;
+    background-color: rgba(221, 221, 221, 0.81);
+    font-size: 64px;
+    -unity-font-style: bold;
 }
 
-.button-numPadTransition:hover {
+.button-numberPadButton:hover {
     transition-property: scale, background-color;
     transition-duration: 0.25s, 0.25s;
     scale: 1.05 1.05;
     background-color: rgb(245, 245, 245);
 }
 
-.button-numPadTransition:active {
+.button-numberPadButton:active {
     transition: all 0.05s ease-in-out;
     background-color: rgb(135, 135, 135);
     scale: 1;
 }
 
-
 .button-mathsTypeSelector {
     transition: scale 0.25s ease-in-out, background-color 0.25s ease-in-out;
     width: 987px;
     height: 235px;
-    background-color: rgb(36, 67, 29);
+    background-color: rgb(15, 47, 27);
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -125,4 +121,34 @@
     transition-property: scale;
     transition-duration: 0.25s, 0.25s;
     scale: 1.05 1.05;
+}
+
+.button-back {
+    position: absolute;
+    background-image: url("project://database/Assets/Dark%20UI/New%20Icons/White%20Backward%202.png?fileID=2800000&guid=f30c643a213a8164f96258d141ea1107&type=3#White Backward 2");
+    -unity-background-image-tint-color: rgb(236, 227, 211);
+    left: 15px;
+    top: 24px;
+    width: 125px;
+    height: 125px;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.button-backD {
+    position: absolute;
+    background-image: url("project://database/Assets/Dark%20UI/New%20Icons/White%20Backward%202.png?fileID=2800000&guid=f30c643a213a8164f96258d141ea1107&type=3#White Backward 2");
+    -unity-background-image-tint-color: rgb(0, 0, 0);
+    left: 20px;
+    top: 35px;
+    width: 125px;
+    height: 125px;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
 }

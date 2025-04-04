@@ -8,6 +8,7 @@ public class UILoader : MonoBehaviour
 {
     private PrivateVariables privateVariables;
     private QuickQuizManager quickQuizManager;
+    private MenuManager menuManager;
 
     public UIDocument uiDocument;
     public UIContainer uiContainer;
@@ -18,6 +19,7 @@ public class UILoader : MonoBehaviour
     {
         privateVariables = gameObject.GetComponent<PrivateVariables>();
         quickQuizManager = gameObject.GetComponent<QuickQuizManager>();
+        menuManager = gameObject.GetComponent<MenuManager>();
         uiDocument = GetComponent<UIDocument>();
     }
     void Start()
@@ -50,6 +52,7 @@ public class UILoader : MonoBehaviour
     private void EnableScriptAtachedToUI(string uiName)
     {
         if (uiName == "QuickQuizUI") quickQuizManager.enabled = true;
+        if (uiName == "MainMenu") menuManager.enabled = true;
         //else Debug.LogError("Failed to enable QuickQuizUI's script");
     }
 }
