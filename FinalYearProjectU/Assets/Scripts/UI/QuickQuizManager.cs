@@ -15,7 +15,9 @@ public class QuickQuizManager : MonoBehaviour
     // Pause
     private Button pauseB;
     private VisualElement pauseScreen;
-    private bool isGamePaused;
+
+    [SerializeField]
+    private bool isGamePaused = false;
 
     private Button pauseContinueB;
     private Button pauseExitB;
@@ -93,14 +95,16 @@ public class QuickQuizManager : MonoBehaviour
             pauseScreen = root.Q<VisualElement>("PauseScreen");
             pauseContinueB = root.Q<Button>("ContinueB");
             pauseExitB = root.Q<Button>("ExitB");   
-            if (pauseContinueB != null) { pauseContinueB.clicked += OnPauseContinuePress; }
-            if (pauseExitB != null) { pauseExitB.clicked += OnPauseExitPress; }
+            if (pauseContinueB != null) { pauseContinueB.clicked += TogglePauseScreen; }
+            if (pauseExitB != null) { pauseExitB.clicked += OnExitPress; }
+            
+
             // Initialize score and set empty text
             globalScoreL = root.Q<Label>("GlobalScore");
             if (globalScoreL != null) { globalScoreL.text = "Score: "; }
 
             pauseB = root.Q<Button>("PauseB");
-            pauseB.clicked += () => OnPausePress();
+            if (pauseB != null) { pauseB.clicked += TogglePauseScreen; }
 
             // Operator handeler
             Operator = root.Q<Label>("QOperator");
@@ -146,36 +150,37 @@ public class QuickQuizManager : MonoBehaviour
     {
         if (pauseScreen != null)
         {
+            Debug.Log("pressed continue");
+
+            // if paused resume
             if (isGamePaused)
             {
                 isTimeOn = true;
-
                 pauseScreen.visible = false;
-
                 pauseScreen.style.width = Length.Percent(0);
                 pauseScreen.style.height = Length.Percent(0);
+
                 isGamePaused = false;
+                StartCoroutine(TimerHandeler());
+
+                
+                return;
             }
-            else
+            else // pause the game
             {
                 isTimeOn = false;
+
                 pauseScreen.visible = true;
 
                 pauseScreen.style.width = Length.Percent(100);
                 pauseScreen.style.height = Length.Percent(100);
                 isGamePaused = true;
+                return;
             }
         }
         else Debug.LogError("Pause Screen is Null.");
     }
-    private void OnPauseContinuePress()
-    {
-        TogglePauseScreen();
-    }
-    private void OnPauseExitPress()
-    {
-        OnExitPress();
-    }
+    
     private void StartResetTimeHandeler()
     {
         timeRemaining = privateVariables.TimeRemaining;
