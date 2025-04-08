@@ -1,5 +1,5 @@
 .questionLabel {
-    font-size: 193px;
+    font-size: 120px;
     -unity-font-style: bold;
 }
 
@@ -51,10 +51,9 @@
     background-color: rgb(70, 5, 5);
 }
 
-.numberPadButton {
-    transition: all 0.3s ease-in-out;
-    width: 200px;
-    height: 200px;
+.button-numberPadButton {
+    transition: scale 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    height: 100%;
     border-left-color: rgb(0, 0, 0);
     border-right-color: rgb(0, 0, 0);
     border-top-color: rgb(0, 0, 0);
@@ -63,13 +62,23 @@
     border-top-right-radius: 58px;
     border-bottom-right-radius: 58px;
     border-bottom-left-radius: 58px;
-    border-top-width: 6px;
-    border-right-width: 6px;
-    border-bottom-width: 11px;
-    border-left-width: 6px;
+    border-top-width: 0;
+    border-right-width: 15px;
+    border-bottom-width: 19px;
+    border-left-width: 0;
     background-color: rgba(221, 221, 221, 0.81);
     font-size: 64px;
     -unity-font-style: bold;
+    max-width: 335px;
+    min-width: 336px;
+    max-height: 100%;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 429px;
+    margin-right: 1%;
+    margin-left: 1%;
 }
 
 .button-numberPadButton:hover {
