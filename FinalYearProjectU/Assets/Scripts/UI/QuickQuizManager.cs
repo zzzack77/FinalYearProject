@@ -11,12 +11,19 @@ public class QuickQuizManager : MonoBehaviour
     private PrivateVariables privateVariables;
     private UILoader menuManager;
     public UIDocument uiDocument;
-    
+
+    // Pause
+    private Button pauseB;
+    private VisualElement pauseScreen;
+    private bool isGamePaused;
+
+    private Button pauseContinueB;
+    private Button pauseExitB;
+
 
     private Label globalScoreL;
-    private Button pauseB;
-    private Button[] numPadButtons = new Button[10];
 
+    // Questions and answers
     private Label Operator;
 
     private Label Q1;
@@ -26,9 +33,14 @@ public class QuickQuizManager : MonoBehaviour
 
     private VisualElement InputVE;
     private Label inputHolder;
+
+    // Numpad
+    private Button[] numPadButtons = new Button[10];
+
     private Button clearB;
     private Button enterB;
 
+    // To calculate correct answer and store current answer
     [SerializeField]   
     private int currentStoredNumber;
     [SerializeField]
@@ -43,6 +55,7 @@ public class QuickQuizManager : MonoBehaviour
 
     private bool isInputDestroyable;
     private bool isTimeOn;
+
     
 
     void OnEnable()
@@ -66,6 +79,8 @@ public class QuickQuizManager : MonoBehaviour
 
         OnStartMathsType();
     }
+
+    
     
     public void OnStartMathsType()
     {
@@ -75,6 +90,11 @@ public class QuickQuizManager : MonoBehaviour
             VisualElement root = uiDocument.rootVisualElement;
             Debug.Log(root.name);
 
+            pauseScreen = root.Q<VisualElement>("PauseScreen");
+            pauseContinueB = root.Q<Button>("ContinueB");
+            pauseExitB = root.Q<Button>("ExitB");   
+            if (pauseContinueB != null) { pauseContinueB.clicked += OnPauseContinuePress; }
+            if (pauseExitB != null) { pauseExitB.clicked += OnPauseExitPress; }
             // Initialize score and set empty text
             globalScoreL = root.Q<Label>("GlobalScore");
             if (globalScoreL != null) { globalScoreL.text = "Score: "; }
@@ -121,6 +141,40 @@ public class QuickQuizManager : MonoBehaviour
 
             StartResetTimeHandeler();
         }
+    }
+    public void TogglePauseScreen()
+    {
+        if (pauseScreen != null)
+        {
+            if (isGamePaused)
+            {
+                isTimeOn = true;
+
+                pauseScreen.visible = false;
+
+                pauseScreen.style.width = Length.Percent(0);
+                pauseScreen.style.height = Length.Percent(0);
+                isGamePaused = false;
+            }
+            else
+            {
+                isTimeOn = false;
+                pauseScreen.visible = true;
+
+                pauseScreen.style.width = Length.Percent(100);
+                pauseScreen.style.height = Length.Percent(100);
+                isGamePaused = true;
+            }
+        }
+        else Debug.LogError("Pause Screen is Null.");
+    }
+    private void OnPauseContinuePress()
+    {
+        TogglePauseScreen();
+    }
+    private void OnPauseExitPress()
+    {
+        OnExitPress();
     }
     private void StartResetTimeHandeler()
     {
@@ -207,8 +261,7 @@ public class QuickQuizManager : MonoBehaviour
     }
     void OnPausePress()
     {
-        isTimeOn = false;
-        OnExitPress();
+        TogglePauseScreen();
     }
     void OnExitPress()
     {

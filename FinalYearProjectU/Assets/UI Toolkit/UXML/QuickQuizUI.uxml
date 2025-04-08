@@ -13,7 +13,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 15%; max-width: 15%; min-width: 15%;" />
         </ui:VisualElement>
-        <ui:VisualElement name="VisualElement" style="flex-grow: 1; height: 87.5%; max-height: 87.5%; min-height: 87.5%; width: 100%; align-self: center; align-items: center; justify-content: center;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; height: 82.5%; max-height: 82.5%; min-height: 82.5%; width: 100%; align-self: center; align-items: center; justify-content: center;">
             <ui:VisualElement style="flex-grow: 1; height: 40%; max-height: 40%; min-height: 40%; align-items: center; justify-content: center; align-self: center; width: 100%;">
                 <ui:VisualElement style="flex-grow: 1; width: 100%; height: 20%; align-self: center; align-items: center; justify-content: center; max-height: 20%; min-height: 20%; padding-bottom: 1%;">
                     <ui:Label tabindex="-1" text="What is" parse-escape-sequences="true" display-tooltip-when-elided="true" name="A1" style="-unity-font-style: bold; align-self: center; align-items: center; -unity-text-align: middle-center; width: 30%; height: 100%; -unity-background-scale-mode: scale-to-fit; font-size: 120px; white-space: nowrap; text-overflow: clip;" />
@@ -30,27 +30,43 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1; height: 60%; max-height: 60%; min-height: 60%; width: 100%; align-self: center; justify-content: center; align-items: center;">
-                <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 100%; flex-direction: row; align-items: center; justify-content: center; align-self: center; height: 25%; max-height: 25%; min-height: 25%; padding-top: 1%; padding-bottom: 1%;">
+                <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 100%; flex-direction: row; align-items: center; justify-content: center; align-self: center; height: 25%; max-height: 25%; min-height: 25%; padding-top: 1%; padding-bottom: 1%; padding-right: 30px; padding-left: 30px;">
                     <ui:Button text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B1" class="button-numberPadButton" />
                     <ui:Button text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B2" class="button-numberPadButton" />
                     <ui:Button text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B3" class="button-numberPadButton" />
                 </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: center; align-self: center; height: 25%; max-height: 25%; width: 100%; min-height: 25%; padding-top: 1%; padding-bottom: 1%;">
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: center; align-self: center; height: 25%; max-height: 25%; width: 100%; min-height: 25%; padding-top: 1%; padding-bottom: 1%; padding-right: 30px; padding-left: 30px;">
                     <ui:Button text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B4" class="button-numberPadButton" />
                     <ui:Button text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B5" class="button-numberPadButton" />
                     <ui:Button text="6" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B6" class="button-numberPadButton" />
                 </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: center; align-self: center; height: 25%; max-height: 25%; width: 100%; min-height: 25%; padding-top: 1%; padding-bottom: 1%;">
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; justify-content: center; align-self: center; height: 25%; max-height: 25%; width: 100%; min-height: 25%; padding-top: 1%; padding-bottom: 1%; padding-right: 30px; padding-left: 30px;">
                     <ui:Button text="7" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B7" class="button-numberPadButton" />
                     <ui:Button text="8" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B8" class="button-numberPadButton" />
                     <ui:Button text="9" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B9" class="button-numberPadButton" />
                 </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; width: 100%; flex-direction: row; align-items: center; justify-content: center; align-self: center; height: 25%; min-height: 25%; max-height: 25%; padding-top: 1%; padding-bottom: 2%;">
+                <ui:VisualElement style="flex-grow: 1; width: 100%; flex-direction: row; align-items: center; justify-content: center; align-self: center; height: 25%; min-height: 25%; max-height: 25%; padding-top: 1%; padding-bottom: 2%; padding-right: 30px; padding-left: 30px;">
                     <ui:Button text="Clear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ClearB" class="button-numberPadButton" style="font-size: 54px;" />
                     <ui:Button text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="B0" class="button-numberPadButton" />
                     <ui:Button text="Enter" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EnterB" class="button-numberPadButton" style="font-size: 54px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; height: 5%; max-height: 5%; min-height: 5%;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="PauseScreen" style="flex-grow: 1; position: absolute; background-color: rgba(97, 114, 102, 0.54); width: 100%; height: 100%; align-self: center; align-items: center; opacity: 1; visibility: hidden;">
+        <ui:VisualElement style="flex-grow: 1; height: 20%; max-height: 20%; min-height: 20%;" />
+        <ui:VisualElement style="flex-grow: 1; background-color: rgb(230, 222, 205); padding-top: 0; padding-bottom: 0; width: 85%; height: 30%; max-height: 30%; min-height: 30%; padding-right: 0; padding-left: 0; border-top-left-radius: 100px; border-top-right-radius: 100px; border-bottom-right-radius: 100px; border-bottom-left-radius: 100px; align-self: center; justify-content: center; align-items: center;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center; height: 25%; max-height: 25%; min-height: 25%;">
+                <ui:Label tabindex="-1" text="Pause" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 100%; -unity-font-style: bold;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; height: 33%; max-height: 33%; min-height: 33%; align-items: center; justify-content: center; align-self: center; width: 100%;">
+                <ui:Button text="Continue" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ContinueB" style="width: 80%; max-width: 80%; min-width: 80%; height: 80%; -unity-font-style: bold; font-size: 80px; border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-right-radius: 40px; border-bottom-left-radius: 40px; background-color: rgb(62, 124, 75);" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; height: 33%; max-height: 33%; min-height: 33%; align-items: center; justify-content: center; align-self: stretch;">
+                <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitB" style="width: 80%; max-width: 80%; min-width: 80%; height: 80%; max-height: 80%; min-height: 80%; border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-right-radius: 40px; border-bottom-left-radius: 40px; background-color: rgb(201, 76, 76); font-size: 80px; -unity-font-style: bold;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; height: 50%; max-height: 50%; min-height: 50%; width: 100%; align-self: stretch; align-items: center; justify-content: space-around;" />
     </ui:VisualElement>
 </ui:UXML>
