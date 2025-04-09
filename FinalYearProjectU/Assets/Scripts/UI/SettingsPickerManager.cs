@@ -96,7 +96,7 @@ public class SettingsPickerManager : MonoBehaviour
             if (setting4 != null) { setting4.clicked += OnSetting4Press; }
 
             int op = privateVariables.OperatorType;
-
+            Debug.Log(op);
             
             switch (op)
             {

@@ -9,6 +9,7 @@ public class UILoader : MonoBehaviour
     private PrivateVariables privateVariables;
     private QuickQuizManager quickQuizManager;
     private SettingsPickerManager settingsPickerManager;
+    private OperationPickerManager operationPickerManager;
     private MenuManager menuManager;
 
     public UIDocument uiDocument;
@@ -21,6 +22,7 @@ public class UILoader : MonoBehaviour
         privateVariables = gameObject.GetComponent<PrivateVariables>();
         quickQuizManager = gameObject.GetComponent<QuickQuizManager>();
         settingsPickerManager = gameObject.GetComponent<SettingsPickerManager>();
+        operationPickerManager = gameObject.GetComponent<OperationPickerManager>();
         menuManager = gameObject.GetComponent<MenuManager>();
         uiDocument = GetComponent<UIDocument>();
     }
@@ -45,6 +47,7 @@ public class UILoader : MonoBehaviour
                     uiDocument.rootVisualElement.Add(newUI);
                     Debug.Log("Loading UI: " + uiAsset.name);
                     EnableScriptAtachedToUI(uiAsset.name);
+                    menuManager.UpdateLevel();
                 }
                 else Debug.LogError("Failed to load new UI; uiAsset == null");
             }
@@ -55,7 +58,8 @@ public class UILoader : MonoBehaviour
     {
         if (uiName == "QuickQuizUI") quickQuizManager.enabled = true;
         if (uiName == "QuickQuizSettingsUI") settingsPickerManager.enabled = true;
-        if (uiName == "MainMenu") menuManager.enabled = true;
+        if (uiName == "OperatorPickerUI") operationPickerManager.enabled = true;
+        //if (uiName == "MainMenu") operationPickerManager.enabled = true;
         //else Debug.LogError("Failed to enable QuickQuizUI's script");
     }
 }

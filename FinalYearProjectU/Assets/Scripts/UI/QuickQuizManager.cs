@@ -71,6 +71,7 @@ public class QuickQuizManager : MonoBehaviour
                 privateVariables.OperatorType = 0;
                 privateVariables.MaxNumRange = 100;
                 privateVariables.TimeRemaining = 20;
+                Debug.LogError("Variables have been set to defult");
             }
         }
         else { Debug.LogError("Private variabels didnt assign correctly"); this.enabled = false; }
@@ -260,10 +261,6 @@ public class QuickQuizManager : MonoBehaviour
             }
         }
         else { Debug.LogError("Random Questions unable to be set"); }
-    }
-    void OnPausePress()
-    {
-        TogglePauseScreen();
     }
     void OnExitPress()
     {

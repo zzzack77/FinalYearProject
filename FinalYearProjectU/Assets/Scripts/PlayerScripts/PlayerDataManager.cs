@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerData
 {
     public string playerName;
-    public int points ;
-    public int level;
+    public int currentLevel;
+    public int xp ;
 }
 
 // Manager to handle saving and loading player data
@@ -72,6 +72,42 @@ public class PlayerDataManager : MonoBehaviour
         PlayerData playerData = JsonUtility.FromJson<PlayerData>(json);
         return playerData;
     }
+    public void SetPlayerLevel(int level)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.currentLevel = level;
+            SavePlayerData(player);
+        }
+    }
+    public int getPlayerLevel()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.currentLevel;
+        }
+        return 0;
+    }
+    public void SetPlayerXP(int xp)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.xp = xp;
+            SavePlayerData(player);
+        }
+    }
+    public int getPlayerXP()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.xp;
+        }
+        return 0;
+    }
 
     public void SetPlayerName(string name)
     {
@@ -90,24 +126,6 @@ public class PlayerDataManager : MonoBehaviour
             return player.playerName;
         }
         return null;
-    }
-    public void SetPlayerScore(int totalPoints)
-    {
-        if (GetPlayerDataManager())
-        {
-            PlayerData player = LoadPlayerData();
-            player.points = totalPoints;
-            SavePlayerData(player);
-        }
-    }
-    public int getPlayerScore()
-    {
-        if (GetPlayerDataManager())
-        {
-            PlayerData player = LoadPlayerData();
-            return player.points;
-        }
-        return 0;
     }
     public bool GetPlayerDataManager()
     {
