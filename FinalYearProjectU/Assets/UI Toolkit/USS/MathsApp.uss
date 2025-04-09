@@ -83,17 +83,10 @@
     color: rgb(31, 53, 37);
 }
 
-.button-numberPadButton:hover {
-    transition-property: scale, background-color;
-    transition-duration: 0.25s, 0.25s;
-    scale: 1.05 1.05;
-    background-color: rgb(245, 245, 245);
-}
-
 .button-numberPadButton:active {
     transition: all 0.05s ease-in-out;
     background-color: rgb(135, 135, 135);
-    scale: 1;
+    scale: 1.05;
 }
 
 .button-mathsTypeSelector {
@@ -117,7 +110,7 @@
     color: rgb(255, 255, 255);
 }
 
-.button-mathsTypeSelector:hover {
+.button-mathsTypeSelector:active {
     transition-property: scale, background-color;
     transition-duration: 0.25s, 0.25s;
     scale: 1.05 1.05;
@@ -126,18 +119,17 @@
 
 .button-generalGrowTransition {
     transition: all 0.3s ease-in-out;
+    -unity-background-image-tint-color: rgb(219, 219, 219);
 }
 
-.button-generalGrowTransition:hover {
-    transition-property: scale;
-    transition-duration: 0.25s, 0.25s;
-    scale: 1.05 1.05;
+.button-generalGrowTransition:active {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    scale: 1.05;
 }
 
 .button-back {
     position: absolute;
     background-image: url("project://database/Assets/Dark%20UI/New%20Icons/White%20Backward%202.png?fileID=2800000&guid=f30c643a213a8164f96258d141ea1107&type=3#White Backward 2");
-    -unity-background-image-tint-color: rgb(236, 227, 211);
     left: 15px;
     top: 24px;
     width: 125px;
@@ -162,4 +154,14 @@
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.petFoxT {
+    background-image: url("project://database/Assets/Art/AIArt/Animals/Fox.png?fileID=2800000&guid=90e2a28e2d4d1174392244bba39d4ced&type=3#Fox");
+    -unity-background-scale-mode: scale-to-fit;
+}
+.petFoxF {
+    background-image: url("project://database/Assets/Art/AIArt/Animals/Fox.png?fileID=2800000&guid=90e2a28e2d4d1174392244bba39d4ced&type=3#Fox");
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-background-image-tint-color: rgb(94, 94, 94);
 }

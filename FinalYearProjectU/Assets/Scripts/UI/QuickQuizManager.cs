@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 using UnityEngine.UIElements;
@@ -43,7 +40,7 @@ public class QuickQuizManager : MonoBehaviour
     private Button enterB;
 
     // To calculate correct answer and store current answer
-    [SerializeField]   
+    [SerializeField]
     private int currentStoredNumber;
     [SerializeField]
     private int currentCorrectAnswer;
@@ -58,7 +55,7 @@ public class QuickQuizManager : MonoBehaviour
     private bool isInputDestroyable;
     private bool isTimeOn;
 
-    
+
 
     void OnEnable()
     {
@@ -76,14 +73,14 @@ public class QuickQuizManager : MonoBehaviour
                 privateVariables.TimeRemaining = 20;
             }
         }
-        else {Debug.LogError("Private variabels didnt assign correctly"); this.enabled = false;}
+        else { Debug.LogError("Private variabels didnt assign correctly"); this.enabled = false; }
 
 
         OnStartMathsType();
     }
 
-    
-    
+
+
     public void OnStartMathsType()
     {
         if (uiDocument != null)
@@ -94,10 +91,9 @@ public class QuickQuizManager : MonoBehaviour
 
             pauseScreen = root.Q<VisualElement>("PauseScreen");
             pauseContinueB = root.Q<Button>("ContinueB");
-            pauseExitB = root.Q<Button>("ExitB");   
+            pauseExitB = root.Q<Button>("ExitB");
             if (pauseContinueB != null) { pauseContinueB.clicked += TogglePauseScreen; }
             if (pauseExitB != null) { pauseExitB.clicked += OnExitPress; }
-            
 
             // Initialize score and set empty text
             globalScoreL = root.Q<Label>("GlobalScore");
@@ -163,7 +159,7 @@ public class QuickQuizManager : MonoBehaviour
                 isGamePaused = false;
                 StartCoroutine(TimerHandeler());
 
-                
+
                 return;
             }
             else // pause the game
@@ -180,14 +176,15 @@ public class QuickQuizManager : MonoBehaviour
         }
         else Debug.LogError("Pause Screen is Null.");
     }
-    
+
     private void StartResetTimeHandeler()
     {
         timeRemaining = privateVariables.TimeRemaining;
         isTimeOn = true;
         StartCoroutine(TimerHandeler());
     }
-    private void ResetTimeHandeler() {
+    private void ResetTimeHandeler()
+    {
         timeRemaining = privateVariables.TimeRemaining;
         isTimeOn = true;
     }
@@ -197,7 +194,7 @@ public class QuickQuizManager : MonoBehaviour
         //1 = -
         //2 = *
         //3 = /
-       int operatorType = privateVariables.OperatorType;
+        int operatorType = privateVariables.OperatorType;
         if (Operator != null)
         {
             if (operatorType == 0) Operator.text = "+";
@@ -211,7 +208,7 @@ public class QuickQuizManager : MonoBehaviour
     {
         if (isTimeOn) ResetTimeHandeler();
         else StartResetTimeHandeler();
-        
+
         // Set random questions and store answer for each operator type
         if (Q1 != null && Q2 != null)
         {
@@ -277,7 +274,7 @@ public class QuickQuizManager : MonoBehaviour
     void OnButtonPress(int buttonNumber)
     {
         if (isInputDestroyable) OnClearPress();
-        
+
         if (currentStoredNumber < 9999999)
         {
             //Debug.Log($"Button {buttonNumber} pressed");
@@ -336,7 +333,7 @@ public class QuickQuizManager : MonoBehaviour
                 }
                 else yield break;
             }
-            
+
             if (isInputDestroyable) OnClearPress();
         }
     }
@@ -379,7 +376,7 @@ public class QuickQuizManager : MonoBehaviour
                 yield return new WaitForSeconds(privateVariables.TimeRemaining / 2000f);
                 timeRemaining -= privateVariables.TimeRemaining / 2000f;
             }
-            
+
             if (timeRemaining < 0)
             {
                 TimerBackground.AddToClassList("VEWrongAnswer");

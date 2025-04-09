@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 269204562}
   - component: {fileID: 269204563}
   - component: {fileID: 269204565}
+  - component: {fileID: 269204566}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Player
@@ -170,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 311e2d99130714349b8851f478220c14, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 116b22ee020272e40b5389cf2bf75c9a, type: 3}
   m_SortingOrder: 0
 --- !u!4 &269204560
 Transform:
@@ -212,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiDocument: {fileID: 269204559}
+  isGamePaused: 0
   currentStoredNumber: 0
   currentCorrectAnswer: 0
   timeRemaining: 0
@@ -229,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiDocument: {fileID: 269204559}
   uiContainer: {fileID: 11400000, guid: f092babf90985464b8c29e073ac6c01c, type: 2}
-  instantLoad: 1
+  instantLoad: 2
 --- !u!114 &269204565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +242,19 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c4ddb6b34acb52438e5c010a100cc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiDocument: {fileID: 269204559}
+--- !u!114 &269204566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269204555}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16152bdc09cac249b6d1de147009620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiDocument: {fileID: 269204559}

@@ -62,19 +62,44 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private void OnAdditionPress() => OnOperationPress(0, maxNumRange0, timeRemaining0, "Addition");
-    private void OnSubtractionPress() => OnOperationPress(1, maxNumRange1, timeRemaining1, "Subtraction");
-    private void OnMultiplicationPress() => OnOperationPress(2, maxNumRange2, timeRemaining2, "Multiplication");
-    private void OnDivisionPress() => OnOperationPress(3, maxNumRange3, timeRemaining3, "Division");
-
-    private void OnOperationPress(int operatorType, int maxNumRange, float timeRemaining, string operationName)
+    private void OnAdditionPress()
     {
-        Debug.Log($"Pressed {operationName}");
-        privateVariables.OperatorType = operatorType;
-        privateVariables.MaxNumRange = maxNumRange;
-        privateVariables.TimeRemaining = timeRemaining;
-
-        uiLoader.LoadUIByContainerIndex(1);
+        privateVariables.OperatorType = 0;
+        uiLoader.LoadUIByContainerIndex(2);
         this.enabled = false;
     }
+    private void OnSubtractionPress()
+    {
+        privateVariables.OperatorType = 1;
+        uiLoader.LoadUIByContainerIndex(2);
+        this.enabled = false;
+    }
+    private void OnMultiplicationPress()
+    {
+        privateVariables.OperatorType = 2;
+        uiLoader.LoadUIByContainerIndex(2);
+        this.enabled = false;
+    }
+    private void OnDivisionPress()
+    {
+        privateVariables.OperatorType = 3;
+        uiLoader.LoadUIByContainerIndex(2);
+        this.enabled = false;
+    }
+
+    //private void OnAdditionPress() => OnOperationPress(0, maxNumRange0, timeRemaining0, "Addition");
+    //private void OnSubtractionPress() => OnOperationPress(1, maxNumRange1, timeRemaining1, "Subtraction");
+    //private void OnMultiplicationPress() => OnOperationPress(2, maxNumRange2, timeRemaining2, "Multiplication");
+    //private void OnDivisionPress() => OnOperationPress(3, maxNumRange3, timeRemaining3, "Division");
+
+    //private void OnOperationPress(int operatorType, int maxNumRange, float timeRemaining, string operationName)
+    //{
+    //    Debug.Log($"Pressed {operationName}");
+    //    privateVariables.OperatorType = operatorType;
+    //    privateVariables.MaxNumRange = maxNumRange;
+    //    privateVariables.TimeRemaining = timeRemaining;
+
+    //    uiLoader.LoadUIByContainerIndex(1);
+    //    this.enabled = false;
+    //}
 }
