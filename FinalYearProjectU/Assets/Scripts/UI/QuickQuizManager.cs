@@ -264,7 +264,7 @@ public class QuickQuizManager : MonoBehaviour
     }
     void OnExitPress()
     {
-        menuManager.LoadUIByContainerIndex(0);
+        menuManager.LoadUIByContainerIndex(3);
         this.enabled = false;
     }
 

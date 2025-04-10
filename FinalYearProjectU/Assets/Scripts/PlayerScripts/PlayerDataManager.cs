@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerData
 {
     public string playerName;
+    public int currentGold;
+    public string currentPet;
     public int currentLevel;
     public int xp ;
 }
@@ -72,6 +74,51 @@ public class PlayerDataManager : MonoBehaviour
         PlayerData playerData = JsonUtility.FromJson<PlayerData>(json);
         return playerData;
     }
+    public string GetPlayerName()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.playerName;
+        }
+        return null;
+    }
+    public void SetPlayerName(string name)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.playerName = name;
+            SavePlayerData(player);
+        }
+    }
+    public int GetPlayerGold()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.currentGold;
+        }
+        return 0;
+    }
+    public void SetPlayerGold(int gold)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.currentGold = gold;
+            SavePlayerData(player);
+        }
+    }
+    public int GetPlayerLevel()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.currentLevel;
+        }
+        return 0;
+    }
     public void SetPlayerLevel(int level)
     {
         if (GetPlayerDataManager())
@@ -81,12 +128,30 @@ public class PlayerDataManager : MonoBehaviour
             SavePlayerData(player);
         }
     }
-    public int getPlayerLevel()
+    public string GetPlayerPet()
     {
         if (GetPlayerDataManager())
         {
             PlayerData player = LoadPlayerData();
-            return player.currentLevel;
+            return player.currentPet;
+        }
+        return null;
+    }
+    public void SetPlayerPet(string pet)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.currentPet = pet;
+            SavePlayerData(player);
+        }
+    }
+    public int GetPlayerXP()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.xp;
         }
         return 0;
     }
@@ -99,34 +164,7 @@ public class PlayerDataManager : MonoBehaviour
             SavePlayerData(player);
         }
     }
-    public int getPlayerXP()
-    {
-        if (GetPlayerDataManager())
-        {
-            PlayerData player = LoadPlayerData();
-            return player.xp;
-        }
-        return 0;
-    }
 
-    public void SetPlayerName(string name)
-    {
-        if (GetPlayerDataManager())
-        {
-            PlayerData player = LoadPlayerData();
-            player.playerName = name;
-            SavePlayerData(player);
-        }
-    }
-    public string getPlayerName()
-    {
-        if (GetPlayerDataManager())
-        {
-            PlayerData player = LoadPlayerData();
-            return player.playerName;
-        }
-        return null;
-    }
     public bool GetPlayerDataManager()
     {
         // Find an existing PlayerDataManager in the scene

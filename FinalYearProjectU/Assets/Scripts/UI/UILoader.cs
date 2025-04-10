@@ -47,7 +47,8 @@ public class UILoader : MonoBehaviour
                     uiDocument.rootVisualElement.Add(newUI);
                     Debug.Log("Loading UI: " + uiAsset.name);
                     EnableScriptAtachedToUI(uiAsset.name);
-                    menuManager.UpdateLevel();
+                    UpdateMenuValues();
+                    
                 }
                 else Debug.LogError("Failed to load new UI; uiAsset == null");
             }
@@ -61,5 +62,11 @@ public class UILoader : MonoBehaviour
         if (uiName == "OperatorPickerUI") operationPickerManager.enabled = true;
         //if (uiName == "MainMenu") operationPickerManager.enabled = true;
         //else Debug.LogError("Failed to enable QuickQuizUI's script");
+    }
+    private void UpdateMenuValues()
+    {
+        menuManager.UpdateGold();
+        menuManager.UpdateLevel();
+        menuManager.UpdatePet(privateVariables.CurrentPet);
     }
 }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784f223e509232541a49de430fa3e93e, type: 3}
+  m_Name: UIImageLibrary
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 11400000, guid: 4c351b25d8d2db44c8d382adb62646e2, type: 2}
+  - {fileID: 11400000, guid: cba96bf6ed0fa1c4da92f732647aca0a, type: 2}
+  - {fileID: 11400000, guid: a2bc32210ed3ac24fb78c5570783150e, type: 2}
+  - {fileID: 11400000, guid: 318f6b949aeab4744866e5a75953cdd7, type: 2}
+  - {fileID: 11400000, guid: 8a29ec3cb2b119648a5426c27c1d185c, type: 2}
+  - {fileID: 11400000, guid: 7e22835e718b06443917e5cdfac2e698, type: 2}
+  - {fileID: 11400000, guid: 2349aa2d7468ff4438b9cb7132cfabfe, type: 2}

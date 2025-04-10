@@ -10,11 +10,21 @@ public class PrivateVariables : MonoBehaviour
 
     public LevelData levelData;
 
+    private string playerName;
+
+    [SerializeField]
+    private int currentGold;
+
+    [SerializeField]
+    private string currentPet;
+
     [SerializeField]
     private int currentLevel;
+
     [SerializeField]
     private int globalXP;
-    private string playerName;
+
+    
     [SerializeField]
     private int operatorType;
     private int maxNumRange;
@@ -31,11 +41,42 @@ public class PrivateVariables : MonoBehaviour
     
     public void LoadDataToPrivateVariables()
     {
+        playerName = playerDataManager.GetPlayerName();
+        currentGold = playerDataManager.GetPlayerGold();
+        currentPet = playerDataManager.GetPlayerPet();
+        currentLevel = playerDataManager.GetPlayerLevel();
+        globalXP = playerDataManager.GetPlayerXP();
+    }
+    public string PlayerName
+    {
+        get => playerName;
 
-        currentLevel = playerDataManager.getPlayerLevel();
-        globalXP = playerDataManager.getPlayerXP();
-        playerName = playerDataManager.getPlayerName();
-
+        set
+        {
+            playerName = value;
+            playerDataManager.SetPlayerName(value);
+        }
+    }
+    public int CurrentGold
+    {
+        get => currentGold;
+        set
+        {
+            currentGold = value;
+            menuManager.UpdateGold();
+            playerDataManager.SetPlayerGold(value);
+            
+        }
+    }
+    public string CurrentPet
+    {
+        get => currentPet;
+        set
+        {
+            currentPet = value;
+            menuManager.UpdatePet(value);
+            playerDataManager.SetPlayerPet(value);
+        }
     }
     public int CurrentLevel
     {
@@ -58,16 +99,6 @@ public class PrivateVariables : MonoBehaviour
             playerDataManager.SetPlayerXP(value);
         } 
     }
-    public string PlayerName
-    {
-        get => playerName;
-
-        set
-        {
-            playerName = value;
-            playerDataManager.SetPlayerName(value);
-        }
-    } 
     public int MaxNumRange { get => maxNumRange; set => maxNumRange = value; }
     public int OperatorType {  get => operatorType; set => operatorType = value; }
     public float TimeRemaining { get => timeRemaining; set => timeRemaining = value; }
@@ -110,15 +141,5 @@ public class PrivateVariables : MonoBehaviour
             return (GlobalXP - currentLevelXP).ToString() + " / " + (nextLevelXP - currentLevelXP).ToString();
         }
         return "0 / " + levelData.levels[currentLevel].ToString();
-        //return 
-        //if (i == 0)
-        //{
-        //    return GlobalXP - currentLevelXP;
-        //}
-        //if (i == 1)
-        //{
-        //    return nextLevelXP - currentLevelXP;
-        //}
-        //else return 0;
     }
 }

@@ -29,7 +29,7 @@
             <ui:Button text="Division ÷" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DivisionB" class="button-mathsTypeSelector" style="background-color: rgb(57, 55, 40); color: rgb(236, 226, 209);" />
         </ui:VisualElement>
         <ui:VisualElement name="FooterAnimalVE" style="flex-grow: 1; height: 15%; max-height: 15%; min-height: 15%;">
-            <ui:VisualElement name="CurrentPet" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/AIArt/Animals/Fox.png?fileID=2800000&amp;guid=90e2a28e2d4d1174392244bba39d4ced&amp;type=3#Fox&quot;); -unity-background-scale-mode: scale-to-fit; align-self: flex-end; width: 30%; -unity-background-image-tint-color: rgb(255, 255, 255);" />
+            <ui:VisualElement name="CurrentPet" style="flex-grow: 1; -unity-background-scale-mode: scale-to-fit; align-self: flex-end; width: 30%; -unity-background-image-tint-color: rgb(255, 255, 255);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -159,8 +159,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 6716cff1cd5016e4ca6f480b674d332d, type: 2}
+  currentPet: 
   currentLevel: 0
   globalXP: 0
+  operatorType: 0
 --- !u!114 &269204559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiDocument: {fileID: 269204559}
+  imageLibary: {fileID: 11400000, guid: 9fce49fcaadabb349904fc6628b5cbbb, type: 2}
 --- !u!114 &269204566
 MonoBehaviour:
   m_ObjectHideFlags: 0

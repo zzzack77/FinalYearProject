@@ -63,11 +63,10 @@ public class OperationPickerManager : MonoBehaviour
 
     private void OnAdditionPress()
     {
-        Debug.Log("helloworld");
-        privateVariables.GlobalXP++;
-        //privateVariables.OperatorType = 0;
-        //uiLoader.LoadUIByContainerIndex(2);
-        //this.enabled = false;
+        privateVariables.TimeRemaining = 20f;
+        privateVariables.OperatorType = 0;
+        uiLoader.LoadUIByContainerIndex(2);
+        this.enabled = false;
     }
     private void OnSubtractionPress()
     {
