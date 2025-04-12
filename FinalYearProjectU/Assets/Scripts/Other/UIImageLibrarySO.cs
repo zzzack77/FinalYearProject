@@ -30,4 +30,25 @@ public class UIImageLibrarySO : ScriptableObject
         Debug.LogWarning($"Image with key '{key}' not found.");
         return null;
     }
+    public Texture2D GetImageByIndex(int index)
+    {
+        if (images == null || index < 0 || index >= images.Count)
+        {
+            Debug.LogWarning($"Invalid image index: {index}. Must be between 0 and {images.Count - 1}.");
+            return null;
+        }
+
+        return images[index].image;
+    }
+    
+    public string GetImageKeyByIndex(int index)
+    {
+        if (images == null || index < 0 || index >= images.Count)
+        {
+            Debug.LogWarning($"Invalid image index: {index}. Must be between 0 and {images.Count - 1}.");
+            return null;
+        }
+
+        return images[index].key;
+    }
 }

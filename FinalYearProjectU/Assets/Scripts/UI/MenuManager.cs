@@ -74,7 +74,6 @@ public class MenuManager : MonoBehaviour
 
                 levelBar = root.Q<VisualElement>("LevelBar");
                 levelBar.style.width = Length.Percent(privateVariables.CalculatePercentageXP());
-                //Debug.Log(privateVariables.CalculatePercentageXP());
                 levelRemaining = root.Q<Label>("LevelRemaining");
                 levelRemaining.text = privateVariables.CalculateRemainingXP();
             }
@@ -92,14 +91,16 @@ public class MenuManager : MonoBehaviour
             if (currentLevelVE != null)
             {
                 currentPet = root.Q<VisualElement>("CurrentPet");
-                Texture2D image = imageLibary.GetImage(imageKey);
-                if (image != null)
+                if (imageLibary.GetImage(imageKey) != null)
                 {
-                    currentPet.style.backgroundImage = new StyleBackground(image);
+                    Texture2D image = imageLibary.GetImage(imageKey);
+                    if (image != null)
+                    {
+                        currentPet.style.backgroundImage = new StyleBackground(image);
+                    }
+                    else currentPet.style.backgroundImage = new StyleBackground(new Texture2D(0, 0));
                 }
-                else currentPet.style.backgroundImage = new StyleBackground(new Texture2D(0, 0));
             }
         }
     }
-
 }

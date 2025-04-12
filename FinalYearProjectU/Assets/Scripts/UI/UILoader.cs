@@ -11,7 +11,7 @@ public class UILoader : MonoBehaviour
     private SettingsPickerManager settingsPickerManager;
     private OperationPickerManager operationPickerManager;
     private MenuManager menuManager;
-
+    private PetPickerScript petPickerScript;
     public UIDocument uiDocument;
     public UIContainer uiContainer;
 
@@ -24,6 +24,7 @@ public class UILoader : MonoBehaviour
         settingsPickerManager = gameObject.GetComponent<SettingsPickerManager>();
         operationPickerManager = gameObject.GetComponent<OperationPickerManager>();
         menuManager = gameObject.GetComponent<MenuManager>();
+        petPickerScript = gameObject.GetComponent<PetPickerScript>();
         uiDocument = GetComponent<UIDocument>();
     }
     void Start()
@@ -60,6 +61,7 @@ public class UILoader : MonoBehaviour
         if (uiName == "QuickQuizUI") quickQuizManager.enabled = true;
         if (uiName == "QuickQuizSettingsUI") settingsPickerManager.enabled = true;
         if (uiName == "OperatorPickerUI") operationPickerManager.enabled = true;
+        if (uiName == "PetPickerUI") petPickerScript.enabled = true;
         //if (uiName == "MainMenu") operationPickerManager.enabled = true;
         //else Debug.LogError("Failed to enable QuickQuizUI's script");
     }

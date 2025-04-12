@@ -272,6 +272,7 @@ public class QuickQuizManager : MonoBehaviour
     {
         if (isInputDestroyable) OnClearPress();
 
+        // 9999999 is the maximum number you can fit in the text box
         if (currentStoredNumber < 9999999)
         {
             //Debug.Log($"Button {buttonNumber} pressed");

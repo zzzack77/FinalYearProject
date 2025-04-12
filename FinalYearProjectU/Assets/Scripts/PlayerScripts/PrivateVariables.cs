@@ -11,17 +11,11 @@ public class PrivateVariables : MonoBehaviour
     public LevelData levelData;
 
     private string playerName;
-
-    [SerializeField]
     private int currentGold;
-
     [SerializeField]
+    private bool[] unlockedPets = new bool[8];
     private string currentPet;
-
-    [SerializeField]
     private int currentLevel;
-
-    [SerializeField]
     private int globalXP;
 
     
@@ -43,9 +37,12 @@ public class PrivateVariables : MonoBehaviour
     {
         playerName = playerDataManager.GetPlayerName();
         currentGold = playerDataManager.GetPlayerGold();
+        unlockedPets = playerDataManager.GetPlayerUnlockedPets();
         currentPet = playerDataManager.GetPlayerPet();
         currentLevel = playerDataManager.GetPlayerLevel();
         globalXP = playerDataManager.GetPlayerXP();
+
+        CheckLevelUp(GlobalXP);
     }
     public string PlayerName
     {
@@ -67,6 +64,25 @@ public class PrivateVariables : MonoBehaviour
             playerDataManager.SetPlayerGold(value);
             
         }
+    }
+    public bool[] UnlockedPets
+    {
+        get => unlockedPets;
+        set
+        {
+            Debug.Log("unlocked");
+            unlockedPets = value;
+            playerDataManager.SetPlayerUnlockedPets(value);
+        }
+    }
+    public void UnlockPet(int index)
+    {
+        if (index < 0 || index >= unlockedPets.Length) return;
+
+        unlockedPets[index] = true;
+
+        if (playerDataManager != null)
+            playerDataManager.SetPlayerUnlockedPets(unlockedPets);
     }
     public string CurrentPet
     {
@@ -137,9 +153,10 @@ public class PrivateVariables : MonoBehaviour
         {
             int currentLevelXP = levelData.levels[currentLevel - 1].requiredXP;
             int nextLevelXP = levelData.levels[currentLevel].requiredXP;
+            Debug.Log(nextLevelXP);
 
             return (GlobalXP - currentLevelXP).ToString() + " / " + (nextLevelXP - currentLevelXP).ToString();
         }
-        return "0 / " + levelData.levels[currentLevel].ToString();
+        return "";
     }
 }

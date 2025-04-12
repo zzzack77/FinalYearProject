@@ -10,6 +10,9 @@ public class SettingsPickerManager : MonoBehaviour
     private UILoader uiLoader;
     public UIDocument uiDocument;
 
+    private Button backB;
+    private Button settingsB;
+
     private Button setting1;
     private Button setting2;
     private Button setting3;
@@ -85,6 +88,11 @@ public class SettingsPickerManager : MonoBehaviour
         {
             VisualElement root = uiDocument.rootVisualElement;
 
+            backB = root.Q<Button>("BackB");
+            settingsB = root.Q<Button>("SettingsB");
+            if (backB != null) { backB.clicked += OnBackBPress; }
+            if (settingsB != null) { settingsB.clicked += OnSettingsBPress; }
+
             setting1 = root.Q<Button>("Setting1");
             setting2 = root.Q<Button>("Setting2");
             setting3 = root.Q<Button>("Setting3");
@@ -126,7 +134,18 @@ public class SettingsPickerManager : MonoBehaviour
         }
 
     }
-    
+    private void OnBackBPress()
+    {
+        uiLoader.LoadUIByContainerIndex(3);
+        this.enabled = false;
+    }
+    private void OnSettingsBPress()
+    {
+        //uiLoader.LoadUIByContainerIndex(3);
+        //this.enabled = false;
+    }
+
+
     private void OnSetting1Press() { LoadUI(0); }
     private void OnSetting2Press() { LoadUI(1); }
     private void OnSetting3Press() { LoadUI(2); }

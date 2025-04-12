@@ -7,6 +7,7 @@ public class PlayerData
 {
     public string playerName;
     public int currentGold;
+    public bool[] unlockedPets = new bool[8];
     public string currentPet;
     public int currentLevel;
     public int xp ;
@@ -110,21 +111,21 @@ public class PlayerDataManager : MonoBehaviour
             SavePlayerData(player);
         }
     }
-    public int GetPlayerLevel()
+    public bool[] GetPlayerUnlockedPets()
     {
         if (GetPlayerDataManager())
         {
             PlayerData player = LoadPlayerData();
-            return player.currentLevel;
+            return player.unlockedPets;
         }
-        return 0;
+        return null;
     }
-    public void SetPlayerLevel(int level)
+    public void SetPlayerUnlockedPets(bool[] unlockedP)
     {
         if (GetPlayerDataManager())
         {
             PlayerData player = LoadPlayerData();
-            player.currentLevel = level;
+            player.unlockedPets = unlockedP;
             SavePlayerData(player);
         }
     }
@@ -143,6 +144,24 @@ public class PlayerDataManager : MonoBehaviour
         {
             PlayerData player = LoadPlayerData();
             player.currentPet = pet;
+            SavePlayerData(player);
+        }
+    }
+    public int GetPlayerLevel()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.currentLevel;
+        }
+        return 0;
+    }
+    public void SetPlayerLevel(int level)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.currentLevel = level;
             SavePlayerData(player);
         }
     }
