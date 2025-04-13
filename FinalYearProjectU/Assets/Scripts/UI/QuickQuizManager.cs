@@ -213,8 +213,8 @@ public class QuickQuizManager : MonoBehaviour
         // Set random questions and store answer for each operator type
         if (Q1 != null && Q2 != null)
         {
-            storedQuestion1 = Random.Range(0, privateVariables.MaxNumRange);
-            storedQuestion2 = Random.Range(0, privateVariables.MaxNumRange);
+            storedQuestion1 = Random.Range(1, privateVariables.MaxNumRange);
+            storedQuestion2 = Random.Range(1, privateVariables.MaxNumRange);
 
             // Addition
             if (privateVariables.OperatorType == 0)

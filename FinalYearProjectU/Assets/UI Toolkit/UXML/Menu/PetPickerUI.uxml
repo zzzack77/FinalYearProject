@@ -47,7 +47,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="FooterAnimalVE" style="flex-grow: 1; height: 15%; max-height: 15%; min-height: 15%; flex-direction: row; background-color: rgb(103, 78, 99); border-top-left-radius: 80px; border-top-right-radius: 80px;">
             <ui:Label tabindex="-1" text="Current Pet:" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 70%; font-size: 102px; -unity-text-align: middle-right; color: rgb(226, 226, 226); -unity-font-style: normal;" />
-            <ui:VisualElement name="CurrentPet" style="flex-grow: 1; align-self: flex-end; width: 30%; height: 100%;" />
+            <ui:VisualElement name="CurrentPet" style="flex-grow: 1; align-self: flex-end; width: 30%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="AreYouSure" style="flex-grow: 1; position: absolute; background-color: rgba(97, 114, 102, 0.54); width: 100%; height: 100%; align-self: center; align-items: center; opacity: 1; visibility: hidden;">

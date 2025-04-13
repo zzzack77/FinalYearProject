@@ -61,9 +61,20 @@ public class UILoader : MonoBehaviour
         if (uiName == "QuickQuizUI") quickQuizManager.enabled = true;
         if (uiName == "QuickQuizSettingsUI") settingsPickerManager.enabled = true;
         if (uiName == "OperatorPickerUI") operationPickerManager.enabled = true;
-        if (uiName == "PetPickerUI") petPickerScript.enabled = true;
+        if (uiName == "PetPickerUI")
+        {
+            DisableScripts();
+            petPickerScript.enabled = true;
+        }
         //if (uiName == "MainMenu") operationPickerManager.enabled = true;
         //else Debug.LogError("Failed to enable QuickQuizUI's script");
+    }
+    private void DisableScripts()
+    {
+        quickQuizManager.enabled = false;
+        settingsPickerManager.enabled = false;
+        operationPickerManager.enabled = false;
+        petPickerScript.enabled = false;
     }
     private void UpdateMenuValues()
     {

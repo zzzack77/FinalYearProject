@@ -121,7 +121,6 @@ public class PrivateVariables : MonoBehaviour
 
     void CheckLevelUp(int currentXP)
     {
-        Debug.Log("Current xp: " + currentXP);
         // Loop through levels to find the right one
         for (int i = 0; i < levelData.levels.Count; i++)
         {
@@ -153,7 +152,6 @@ public class PrivateVariables : MonoBehaviour
         {
             int currentLevelXP = levelData.levels[currentLevel - 1].requiredXP;
             int nextLevelXP = levelData.levels[currentLevel].requiredXP;
-            Debug.Log(nextLevelXP);
 
             return (GlobalXP - currentLevelXP).ToString() + " / " + (nextLevelXP - currentLevelXP).ToString();
         }

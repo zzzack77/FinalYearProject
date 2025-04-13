@@ -19,55 +19,55 @@ public class SettingsPickerManager : MonoBehaviour
     private Button setting4;
 
     [Header("Addition Settings")]
-    private string B1T0 = "1 - 10";
+    private string B1T0 = "1 to 10";
     private int B1V0 = 10;
 
-    private string B2T0 = "1 - 25";
+    private string B2T0 = "1 to 25";
     private int B2V0 = 25;
 
-    private string B3T0 = "1 - 50";
+    private string B3T0 = "1 to 50";
     private int B3V0 = 50;
 
-    private string B4T0 = "1 - 100";
+    private string B4T0 = "1 to 100";
     private int B4V0 = 100;
 
     [Header("Subtraction Settings")]
-    private string B1T1 = "1 - 10";
+    private string B1T1 = "1 to 10";
     private int B1V1 = 10;
 
-    private string B2T1 = "1 - 25";
+    private string B2T1 = "1 to 25";
     private int B2V1 = 25;
 
-    private string B3T1 = "1 - 50";
+    private string B3T1 = "1 to 50";
     private int B3V1 = 50;
 
-    private string B4T1 = "1 - 100";
+    private string B4T1 = "1 to 100";
     private int B4V1 = 100;
 
     [Header("Multiplication Settings")]
-    private string B1T2 = "1 - 4";
+    private string B1T2 = "1 to 4";
     private int B1V2 = 4;
 
-    private string B2T2 = "1 - 8";
+    private string B2T2 = "1 to 8";
     private int B2V2 = 8;
 
-    private string B3T2 = "1 - 10";
+    private string B3T2 = "1 to 10";
     private int B3V2 = 10;
 
-    private string B4T2 = "1 - 12";
+    private string B4T2 = "1 to 12";
     private int B4V2 = 12;
 
     [Header("Division Settings")]
-    private string B1T3 = "1 - 4";
+    private string B1T3 = "1 to 4";
     private int B1V3 = 4;
 
-    private string B2T3 = "1 - 8";
+    private string B2T3 = "1 to 8";
     private int B2V3 = 8 ;
 
-    private string B3T3 = "1 - 10";
+    private string B3T3 = "1 to 10";
     private int B3V3 = 10;
 
-    private string B4T3 = "1 - 12";
+    private string B4T3 = "1 to 12";
     private int B4V3 = 12;
 
     string[] titles = new string[4];
