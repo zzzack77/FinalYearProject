@@ -21,8 +21,14 @@ public class PrivateVariables : MonoBehaviour
     
     [SerializeField]
     private int operatorType;
+    [SerializeField]
     private int maxNumRange;
-    private float timeRemaining;
+    private float timeRemaining = 20f;
+    private int totalNumberOfQuestions = 10;
+    [SerializeField]
+    private int questionNumber;
+    [SerializeField]
+    private int numberOfCorrectQuestions;
 
     private void Start()
     {
@@ -118,7 +124,9 @@ public class PrivateVariables : MonoBehaviour
     public int MaxNumRange { get => maxNumRange; set => maxNumRange = value; }
     public int OperatorType {  get => operatorType; set => operatorType = value; }
     public float TimeRemaining { get => timeRemaining; set => timeRemaining = value; }
-
+    public int TotalNumberOfQuestions { get => totalNumberOfQuestions; set => totalNumberOfQuestions = value; }
+    public int QuestionNumber { get => questionNumber; set => questionNumber = value; }
+    public int NumberOfCorrectQuestions { get => numberOfCorrectQuestions; set => numberOfCorrectQuestions = value; }
     void CheckLevelUp(int currentXP)
     {
         // Loop through levels to find the right one

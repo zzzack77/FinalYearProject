@@ -188,3 +188,17 @@
     border-top-color: rgb(0, 0, 0);
     border-bottom-color: rgb(0, 0, 0);
 }
+
+.StarT {
+    background-image: url("project://database/Assets/Dark%20UI/New%20Icons/White%20Star.png?fileID=2800000&guid=549111a49c8214749bbef8520be1612a&type=3#White Star");
+    -unity-background-image-tint-color: rgb(219, 164, 48);
+    scale: 1 1;
+    -unity-slice-left: 8;
+    -unity-slice-top: 8;
+    -unity-slice-right: 8;
+    -unity-slice-bottom: 8;
+}
+
+.StarF {
+    background-image: url("project://database/Assets/Dark%20UI/Free/Star.png?fileID=2800000&guid=58077e7d7c1f69e448677d19dddcbc9c&type=3#Star");
+}

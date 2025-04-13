@@ -12,6 +12,7 @@ public class UILoader : MonoBehaviour
     private OperationPickerManager operationPickerManager;
     private MenuManager menuManager;
     private PetPickerScript petPickerScript;
+    private QuizCompleteScript quizCompleteScript;
     public UIDocument uiDocument;
     public UIContainer uiContainer;
 
@@ -25,6 +26,7 @@ public class UILoader : MonoBehaviour
         operationPickerManager = gameObject.GetComponent<OperationPickerManager>();
         menuManager = gameObject.GetComponent<MenuManager>();
         petPickerScript = gameObject.GetComponent<PetPickerScript>();
+        quizCompleteScript = gameObject.GetComponent<QuizCompleteScript>();
         uiDocument = GetComponent<UIDocument>();
     }
     void Start()
@@ -47,6 +49,7 @@ public class UILoader : MonoBehaviour
                     newUI.style.flexGrow = 1;
                     uiDocument.rootVisualElement.Add(newUI);
                     Debug.Log("Loading UI: " + uiAsset.name);
+                    DisableScripts();
                     EnableScriptAtachedToUI(uiAsset.name);
                     UpdateMenuValues();
                     
@@ -61,11 +64,8 @@ public class UILoader : MonoBehaviour
         if (uiName == "QuickQuizUI") quickQuizManager.enabled = true;
         if (uiName == "QuickQuizSettingsUI") settingsPickerManager.enabled = true;
         if (uiName == "OperatorPickerUI") operationPickerManager.enabled = true;
-        if (uiName == "PetPickerUI")
-        {
-            DisableScripts();
-            petPickerScript.enabled = true;
-        }
+        if (uiName == "PetPickerUI") petPickerScript.enabled = true;
+        if (uiName == "QuizEndUI") quizCompleteScript.enabled = true;
         //if (uiName == "MainMenu") operationPickerManager.enabled = true;
         //else Debug.LogError("Failed to enable QuickQuizUI's script");
     }
@@ -75,6 +75,7 @@ public class UILoader : MonoBehaviour
         settingsPickerManager.enabled = false;
         operationPickerManager.enabled = false;
         petPickerScript.enabled = false;
+        quizCompleteScript.enabled = false;
     }
     private void UpdateMenuValues()
     {

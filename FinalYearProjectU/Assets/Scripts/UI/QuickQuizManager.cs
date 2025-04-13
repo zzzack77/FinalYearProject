@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class QuickQuizManager : MonoBehaviour
 {
     private PrivateVariables privateVariables;
-    private UILoader menuManager;
+    private UILoader uiLoader;
     public UIDocument uiDocument;
 
     // Pause
@@ -55,12 +55,12 @@ public class QuickQuizManager : MonoBehaviour
     private bool isInputDestroyable;
     private bool isTimeOn;
 
-
+    private Label questionsLeft;
 
     void OnEnable()
     {
         privateVariables = gameObject.GetComponent<PrivateVariables>();
-        menuManager = gameObject.GetComponent<UILoader>();
+        uiLoader = gameObject.GetComponent<UILoader>();
         uiDocument = GetComponent<UIDocument>();
 
         if (privateVariables != null)
@@ -84,6 +84,8 @@ public class QuickQuizManager : MonoBehaviour
 
     public void OnStartMathsType()
     {
+        privateVariables.NumberOfCorrectQuestions = 0;
+        privateVariables.QuestionNumber = 0;
         if (uiDocument != null)
         {
             // Root
@@ -110,6 +112,7 @@ public class QuickQuizManager : MonoBehaviour
             // Initilize question labels and set first questions
             Q1 = root.Q<Label>("Q1");
             Q2 = root.Q<Label>("Q2");
+            questionsLeft = root.Q<Label>("QuestionsLeft");
             ResetRandomQuestions();
 
             // Input text holder for number input
@@ -139,6 +142,7 @@ public class QuickQuizManager : MonoBehaviour
             // Time Code initialization
             TimerBackground = root.Q<VisualElement>("TimerBackground");
             TimerBar = root.Q<VisualElement>("TimerBar");
+
 
             StartResetTimeHandeler();
         }
@@ -207,6 +211,14 @@ public class QuickQuizManager : MonoBehaviour
     }
     void ResetRandomQuestions()
     {
+        privateVariables.QuestionNumber++;
+
+        questionsLeft.text = privateVariables.QuestionNumber.ToString() + "/" + privateVariables.TotalNumberOfQuestions.ToString();
+
+        if (privateVariables.QuestionNumber > privateVariables.TotalNumberOfQuestions)
+        {
+            OnQuizComplete();
+        }
         if (isTimeOn) ResetTimeHandeler();
         else StartResetTimeHandeler();
 
@@ -264,7 +276,12 @@ public class QuickQuizManager : MonoBehaviour
     }
     void OnExitPress()
     {
-        menuManager.LoadUIByContainerIndex(3);
+        uiLoader.LoadUIByContainerIndex(3);
+        this.enabled = false;
+    }
+    void OnQuizComplete()
+    {
+        uiLoader.LoadUIByContainerIndex(5);
         this.enabled = false;
     }
 
@@ -337,6 +354,7 @@ public class QuickQuizManager : MonoBehaviour
     }
     private IEnumerator CorrectAnswer()
     {
+        privateVariables.NumberOfCorrectQuestions++;
         isTimeOn = false;
         StopCoroutine(TimerHandeler());
 
