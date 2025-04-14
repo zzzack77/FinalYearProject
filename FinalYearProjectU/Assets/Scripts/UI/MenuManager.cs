@@ -50,6 +50,28 @@ public class MenuManager : MonoBehaviour
 
                 return true;
             }
+            
+        }
+        return false;
+    }
+
+    public bool IfPetIsTrue()
+    {
+        privateVariables = gameObject.GetComponent<PrivateVariables>();
+        uiDocument = GetComponent<UIDocument>();
+        if (uiDocument != null)
+        {
+            root = uiDocument.rootVisualElement;
+
+            currentLevelVE = root.Q<VisualElement>("FooterAnimalVE");
+            if (currentLevelVE != null)
+            {
+                petB = root.Q<Button>("PetB");
+                if (petB != null) petB.clicked += OnPetPress;
+
+                return true;
+            }
+
         }
         return false;
     }
@@ -131,7 +153,7 @@ public class MenuManager : MonoBehaviour
     }
     public void UpdatePet(string imageKey)
     {
-        if (IfMenuIsTrue())
+        if (IfPetIsTrue())
         {
             currentPet = root.Q<VisualElement>("CurrentPet");
             if (imageLibary.GetImage(imageKey) != null)

@@ -17,15 +17,39 @@ public class QuizCompleteScript : MonoBehaviour
 
     private Button retryB;
     private Button continueB;
+
+    
+
+    private int xpMultiplier = 10;
+    private int goldMultiplier = 2;
     private void OnEnable()
     {
         privateVariables = gameObject.GetComponent<PrivateVariables>();
         uiLoader = gameObject.GetComponent<UILoader>();
         uiDocument = GetComponent<UIDocument>();
 
+        StartCoroutine(GiveXP());
+        StartCoroutine(GiveGold());
+
         OnQuizCompleteStar();
     }
 
+    private IEnumerator GiveXP()
+    {
+        for (int i = 0; i < privateVariables.NumberOfCorrectQuestions * xpMultiplier; i++)
+        {
+            privateVariables.GlobalXP++;
+            yield return new WaitForSeconds(0.07f);
+        }
+    }
+    private IEnumerator GiveGold()
+    {
+        for (int i = 0; i < privateVariables.NumberOfCorrectQuestions * goldMultiplier; i++)
+        {
+            privateVariables.CurrentGold++;
+            yield return new WaitForSeconds(0.25f);
+        }
+    }
     private void OnQuizCompleteStar()
     {
         if (uiDocument != null)
@@ -48,11 +72,13 @@ public class QuizCompleteScript : MonoBehaviour
     }
     private void OnRetryPress()
     {
+        
         uiLoader.LoadUIByContainerIndex(1);
         this.enabled = false;
     }
     private void OnContinuePress()
     {
+        
         uiLoader.LoadUIByContainerIndex(3);
         this.enabled = false;
     }

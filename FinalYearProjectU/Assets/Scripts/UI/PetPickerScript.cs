@@ -18,6 +18,11 @@ public class PetPickerScript : MonoBehaviour
     private Button yes;
     private Button no;
 
+    private Label costLable;
+
+    private VisualElement notEnoughGold;
+    private Button ContinueB;
+
     private int storedPetForUnlock;
     
     private void OnEnable()
@@ -42,6 +47,12 @@ public class PetPickerScript : MonoBehaviour
             no = root.Q<Button>("NoB");
             if (yes != null) yes.clicked += OnYesPress;
             if (no != null) no.clicked += OnNoPress;
+
+            costLable = root.Q<Label>("Cost");
+
+            notEnoughGold = root.Q<VisualElement>("NotEnoughGold");
+            ContinueB = root.Q<Button>("ContinueB");
+            if (ContinueB != null) ContinueB.clicked += OnContinuePress;
 
             for (int i = 0; i < 8; i++)
             {
@@ -98,16 +109,29 @@ public class PetPickerScript : MonoBehaviour
 
     private void AreYouSure(int i)
     {
-        storedPetForUnlock = i;
-        if (areYouSureVE != null)
+        if (privateVariables.CurrentGold >= 100)
         {
-            areYouSureVE.visible = true;
-            areYouSureVE.style.width = Length.Percent(100);
-            areYouSureVE.style.height = Length.Percent(100);
+            storedPetForUnlock = i;
+            if (areYouSureVE != null)
+            {
+                costLable.text = "Are you sure you want to get this with 100 Gold?";
+                areYouSureVE.visible = true;
+                areYouSureVE.style.width = Length.Percent(100);
+                areYouSureVE.style.height = Length.Percent(100);
+            }
         }
+        else
+        {
+            notEnoughGold.visible = true;
+        }
+    }
+    private void OnContinuePress()
+    {
+        notEnoughGold.visible = false;
     }
     private void OnYesPress()
     {
+        privateVariables.CurrentGold -= 100;
         privateVariables.CurrentPet = imageLibary.GetImageKeyByIndex(storedPetForUnlock);
         privateVariables.UnlockPet(storedPetForUnlock);
         UpdatePetButtonStyle();

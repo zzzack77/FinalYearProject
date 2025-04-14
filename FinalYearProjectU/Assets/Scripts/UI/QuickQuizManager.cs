@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 using UnityEngine.UIElements;
@@ -57,8 +58,11 @@ public class QuickQuizManager : MonoBehaviour
 
     private Label questionsLeft;
 
+    private bool gameEnd;
+
     void OnEnable()
     {
+        gameEnd = false;
         privateVariables = gameObject.GetComponent<PrivateVariables>();
         uiLoader = gameObject.GetComponent<UILoader>();
         uiDocument = GetComponent<UIDocument>();
@@ -276,11 +280,14 @@ public class QuickQuizManager : MonoBehaviour
     }
     void OnExitPress()
     {
+        gameEnd = true;
         uiLoader.LoadUIByContainerIndex(3);
         this.enabled = false;
     }
     void OnQuizComplete()
     {
+        gameEnd = true;
+
         uiLoader.LoadUIByContainerIndex(5);
         this.enabled = false;
     }
@@ -386,7 +393,7 @@ public class QuickQuizManager : MonoBehaviour
     {
         if (TimerBackground != null && TimerBar != null)
         {
-            while (timeRemaining > 0 && isTimeOn)
+            while (timeRemaining > 0 && isTimeOn && !gameEnd)
             {
                 TimerBar.style.width = Length.Percent((timeRemaining / privateVariables.TimeRemaining) * 100);
                 yield return new WaitForSeconds(privateVariables.TimeRemaining / 2000f);

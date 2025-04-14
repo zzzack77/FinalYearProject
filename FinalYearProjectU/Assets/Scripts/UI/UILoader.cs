@@ -13,6 +13,7 @@ public class UILoader : MonoBehaviour
     private MenuManager menuManager;
     private PetPickerScript petPickerScript;
     private QuizCompleteScript quizCompleteScript;
+    private StartScript startScript;
     public UIDocument uiDocument;
     public UIContainer uiContainer;
 
@@ -27,6 +28,7 @@ public class UILoader : MonoBehaviour
         menuManager = gameObject.GetComponent<MenuManager>();
         petPickerScript = gameObject.GetComponent<PetPickerScript>();
         quizCompleteScript = gameObject.GetComponent<QuizCompleteScript>();
+        startScript = gameObject.GetComponent<StartScript>();
         uiDocument = GetComponent<UIDocument>();
     }
     void Start()
@@ -61,6 +63,7 @@ public class UILoader : MonoBehaviour
     }
     private void EnableScriptAtachedToUI(string uiName)
     {
+        if (uiName == "StartUI") startScript.enabled = true;
         if (uiName == "QuickQuizUI") quickQuizManager.enabled = true;
         if (uiName == "QuickQuizSettingsUI") settingsPickerManager.enabled = true;
         if (uiName == "OperatorPickerUI") operationPickerManager.enabled = true;
@@ -71,6 +74,7 @@ public class UILoader : MonoBehaviour
     }
     private void DisableScripts()
     {
+        startScript.enabled = false;
         quickQuizManager.enabled = false;
         settingsPickerManager.enabled = false;
         operationPickerManager.enabled = false;

@@ -32,7 +32,7 @@ public class OperationPickerManager : MonoBehaviour
     private int maxNumRange3 = 12;
     private float timeRemaining3 = 20;
 
-
+    private Button backB;
 
     private void OnEnable()
     {
@@ -58,6 +58,9 @@ public class OperationPickerManager : MonoBehaviour
             subtractionB.clicked += () => OnSubtractionPress();
             multiplicationB.clicked += () => OnMultiplicationPress();
             divisionB.clicked += () => OnDivisionPress();
+
+            backB = root.Q<Button>("BackB");
+            if (backB != null) { backB.clicked += OnBackBPress; }
         }
     }
 
@@ -89,7 +92,11 @@ public class OperationPickerManager : MonoBehaviour
         uiLoader.LoadUIByContainerIndex(2);
         this.enabled = false;
     }
-
+    private void OnBackBPress()
+    {
+        uiLoader.LoadUIByContainerIndex(0);
+        this.enabled = false;
+    }
     //private void OnAdditionPress() => OnOperationPress(0, maxNumRange0, timeRemaining0, "Addition");
     //private void OnSubtractionPress() => OnOperationPress(1, maxNumRange1, timeRemaining1, "Subtraction");
     //private void OnMultiplicationPress() => OnOperationPress(2, maxNumRange2, timeRemaining2, "Multiplication");

@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 269204567}
   - component: {fileID: 269204568}
   - component: {fileID: 269204569}
+  - component: {fileID: 269204570}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Player
@@ -240,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiDocument: {fileID: 269204559}
   uiContainer: {fileID: 11400000, guid: f092babf90985464b8c29e073ac6c01c, type: 2}
-  instantLoad: 3
+  instantLoad: 0
 --- !u!114 &269204565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +306,19 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 063ade4faa72b804a95030335b97094c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiDocument: {fileID: 269204559}
+--- !u!114 &269204570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269204555}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6873c681538751f48b4a29d190cc6b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiDocument: {fileID: 269204559}
