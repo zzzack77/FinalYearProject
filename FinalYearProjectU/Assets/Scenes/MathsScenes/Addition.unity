@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiDocument: {fileID: 269204559}
   uiContainer: {fileID: 11400000, guid: f092babf90985464b8c29e073ac6c01c, type: 2}
-  instantLoad: 5
+  instantLoad: 3
 --- !u!114 &269204565
 MonoBehaviour:
   m_ObjectHideFlags: 0
