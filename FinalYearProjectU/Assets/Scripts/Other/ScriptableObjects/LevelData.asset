@@ -33,5 +33,25 @@ MonoBehaviour:
     requiredXP: 3000
   - level: 10
     requiredXP: 4000
-  - level: 0
-    requiredXP: 0
+  - level: 11
+    requiredXP: 5000
+  - level: 12
+    requiredXP: 6000
+  - level: 13
+    requiredXP: 8000
+  - level: 14
+    requiredXP: 10000
+  - level: 15
+    requiredXP: 15000
+  - level: 16
+    requiredXP: 20000
+  - level: 17
+    requiredXP: 40000
+  - level: 18
+    requiredXP: 60000
+  - level: 19
+    requiredXP: 100000
+  - level: 20
+    requiredXP: 300000
+  - level: 21
+    requiredXP: 2147483647
