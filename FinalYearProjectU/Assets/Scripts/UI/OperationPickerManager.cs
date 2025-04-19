@@ -16,21 +16,21 @@ public class OperationPickerManager : MonoBehaviour
     private Button multiplicationB;
     private Button divisionB;
 
-    [Header("Addition StartUp Settings")]
-    private int maxNumRange0 = 100;
-    private float timeRemaining0 = 20;
+    //[Header("Addition StartUp Settings")]
+    //private int maxNumRange0 = 100;
+    //private float timeRemaining0 = 20;
 
-    [Header("Subtraction StartUp Settings")]
-    private int maxNumRange1 = 100;
-    private float timeRemaining1 = 20;
+    //[Header("Subtraction StartUp Settings")]
+    //private int maxNumRange1 = 100;
+    //private float timeRemaining1 = 20;
 
-    [Header("Multiplication StartUp Settings")]
-    private int maxNumRange2 = 12;
-    private float timeRemaining2 = 20;
+    //[Header("Multiplication StartUp Settings")]
+    //private int maxNumRange2 = 12;
+    //private float timeRemaining2 = 20;
 
-    [Header("Division StartUp Settings")]
-    private int maxNumRange3 = 12;
-    private float timeRemaining3 = 20;
+    //[Header("Division StartUp Settings")]
+    //private int maxNumRange3 = 12;
+    //private float timeRemaining3 = 20;
 
     private Button backB;
 

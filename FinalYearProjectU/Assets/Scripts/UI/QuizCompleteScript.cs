@@ -21,7 +21,7 @@ public class QuizCompleteScript : MonoBehaviour
     
 
     private int xpMultiplier = 10;
-    private int goldMultiplier = 2;
+    private int goldMultiplier = 5;
     private void OnEnable()
     {
         privateVariables = gameObject.GetComponent<PrivateVariables>();
@@ -47,7 +47,7 @@ public class QuizCompleteScript : MonoBehaviour
         for (int i = 0; i < privateVariables.NumberOfCorrectQuestions * goldMultiplier; i++)
         {
             privateVariables.CurrentGold++;
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.14f);
         }
     }
     private void OnQuizCompleteStar()
