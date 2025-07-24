@@ -8,6 +8,7 @@ public class QuizCompleteScript : MonoBehaviour
     private PrivateVariables privateVariables;
     private UILoader uiLoader;
     public UIDocument uiDocument;
+    private PlayerDataManager playerDataManager;
 
     private Button star1;
     private Button star2;
@@ -27,11 +28,12 @@ public class QuizCompleteScript : MonoBehaviour
         privateVariables = gameObject.GetComponent<PrivateVariables>();
         uiLoader = gameObject.GetComponent<UILoader>();
         uiDocument = GetComponent<UIDocument>();
+        playerDataManager = GetComponent<PlayerDataManager>();
 
         StartCoroutine(GiveXP());
         StartCoroutine(GiveGold());
 
-        OnQuizCompleteStar();
+        OnQuizCompleteStart();
     }
 
     private IEnumerator GiveXP()
@@ -50,7 +52,7 @@ public class QuizCompleteScript : MonoBehaviour
             yield return new WaitForSeconds(0.14f);
         }
     }
-    private void OnQuizCompleteStar()
+    private void OnQuizCompleteStart()
     {
         if (uiDocument != null)
         {
@@ -59,6 +61,9 @@ public class QuizCompleteScript : MonoBehaviour
             star1 = root.Q<Button>("Star1");
             star2 = root.Q<Button>("Star2");
             star3 = root.Q<Button>("Star3");
+
+            playerDataManager.SetNumQuestionsAnswered(playerDataManager.GetNumQuestionsAnswered() + privateVariables.TotalNumberOfQuestions);
+            playerDataManager.SetNumQuestionsAnsweredCorrect(playerDataManager.GetNumQuestionsAnsweredCorrect() + privateVariables.NumberOfCorrectQuestions);
 
             questionsCorrect = root.Q<Label>("QuestionsCorrect");
             questionsCorrect.text = privateVariables.NumberOfCorrectQuestions.ToString() + "/" + privateVariables.TotalNumberOfQuestions.ToString() ;

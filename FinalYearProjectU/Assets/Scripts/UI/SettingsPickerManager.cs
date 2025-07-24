@@ -8,6 +8,7 @@ public class SettingsPickerManager : MonoBehaviour
     private PrivateVariables privateVariables;
     private UILoader uiLoader;
     public UIDocument uiDocument;
+    private PlayerDataManager playerDataManager;
 
     private Button backB;
     private Button settingsB;
@@ -77,6 +78,8 @@ public class SettingsPickerManager : MonoBehaviour
         privateVariables = gameObject.GetComponent<PrivateVariables>();
         uiLoader = gameObject.GetComponent<UILoader>();
         uiDocument = GetComponent<UIDocument>();
+        playerDataManager = gameObject.GetComponent<PlayerDataManager>();
+
 
         OnSettingsStart();
     }
@@ -145,10 +148,10 @@ public class SettingsPickerManager : MonoBehaviour
     }
 
 
-    private void OnSetting1Press() { LoadUI(0); }
-    private void OnSetting2Press() { LoadUI(1); }
-    private void OnSetting3Press() { LoadUI(2); }
-    private void OnSetting4Press() { LoadUI(3); }
+    private void OnSetting1Press() { LoadUI(0); playerDataManager.SetNumEasyPicked(playerDataManager.GetNumEasyPicked() + 1); }
+    private void OnSetting2Press() { LoadUI(1); playerDataManager.SetNumMediumPicked(playerDataManager.GetNumMediumPicked() + 1); }
+    private void OnSetting3Press() { LoadUI(2); playerDataManager.SetNumHardPicked(playerDataManager.GetNumHardPicked() + 1); }
+    private void OnSetting4Press() { LoadUI(3); playerDataManager.SetNumVeryHardPicked(playerDataManager.GetNumVeryHardPicked() + 1); }
 
     private void LoadUI(int i)
     {

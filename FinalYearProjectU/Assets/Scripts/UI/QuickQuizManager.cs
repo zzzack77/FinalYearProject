@@ -208,8 +208,8 @@ public class QuickQuizManager : MonoBehaviour
         {
             if (operatorType == 0) Operator.text = "+";
             else if (operatorType == 1) Operator.text = "-";
-            else if (operatorType == 2) Operator.text = "*";
-            else if (operatorType == 3) Operator.text = "/";
+            else if (operatorType == 2) Operator.text = "×";
+            else if (operatorType == 3) Operator.text = "÷";
             else Operator.text = "0";
         }
     }
@@ -340,6 +340,7 @@ public class QuickQuizManager : MonoBehaviour
     }
     private IEnumerator WrongAnswer()
     {
+        isTimeOn = false;
         //StopCoroutine(TimerHandeler());
         isInputDestroyable = true;
         if (InputVE != null)
@@ -352,10 +353,11 @@ public class QuickQuizManager : MonoBehaviour
                     yield return new WaitForSeconds(.2f);
                     InputVE.RemoveFromClassList("VEWrongAnswer");
                     yield return new WaitForSeconds(.2f);
+
                 }
                 else yield break;
             }
-
+            ResetRandomQuestions();
             if (isInputDestroyable) OnClearPress();
         }
     }

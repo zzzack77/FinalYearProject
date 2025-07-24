@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class StartScript : MonoBehaviour
 {
     private PrivateVariables privateVariables;
+    private PlayerDataManager playerDataManager;
     private UILoader uiLoader;
     public UIDocument uiDocument;
 
@@ -17,8 +18,21 @@ public class StartScript : MonoBehaviour
         privateVariables = gameObject.GetComponent<PrivateVariables>();
         uiLoader = gameObject.GetComponent<UILoader>();
         uiDocument = GetComponent<UIDocument>();
+        playerDataManager = gameObject.GetComponent<PlayerDataManager>();
+
+        playerDataManager.SetPlayerName("Gamified");
 
         OnStartScript();
+        StartCoroutine(CountSeconds());
+
+    }
+
+    // Adds 1 each second to record how long the user has been playing in seconds
+    IEnumerator CountSeconds()
+    {
+        yield return new WaitForSeconds(1f);
+        playerDataManager.SetTotalTimePlayed(playerDataManager.GetTotalTimePlayed() + 1);
+        StartCoroutine(CountSeconds());
     }
 
     private void OnStartScript()

@@ -10,6 +10,7 @@ public class OperationPickerManager : MonoBehaviour
     private PrivateVariables privateVariables;
     private UILoader uiLoader;
     public UIDocument uiDocument;
+    private PlayerDataManager playerDataManager;
 
     private Button additionB;
     private Button subtractionB;
@@ -39,6 +40,7 @@ public class OperationPickerManager : MonoBehaviour
         privateVariables = gameObject.GetComponent<PrivateVariables>();
         uiLoader = gameObject.GetComponent<UILoader>();
         uiDocument = GetComponent<UIDocument>();
+        playerDataManager = gameObject.GetComponent<PlayerDataManager>();
 
         OnStartOperatorPicker();
     }
@@ -66,6 +68,7 @@ public class OperationPickerManager : MonoBehaviour
 
     private void OnAdditionPress()
     {
+        playerDataManager.SetNumAdditionPicked(playerDataManager.GetNumAdditionPicked() + 1);
         privateVariables.TimeRemaining = 20f;
         privateVariables.OperatorType = 0;
         uiLoader.LoadUIByContainerIndex(2);
@@ -73,6 +76,8 @@ public class OperationPickerManager : MonoBehaviour
     }
     private void OnSubtractionPress()
     {
+        playerDataManager.SetNumSubtractionPicked(playerDataManager.GetNumSubtractionPicked() + 1);
+
         privateVariables.TimeRemaining = 20f;
         privateVariables.OperatorType = 1;
         uiLoader.LoadUIByContainerIndex(2);
@@ -80,6 +85,8 @@ public class OperationPickerManager : MonoBehaviour
     }
     private void OnMultiplicationPress()
     {
+        playerDataManager.SetNumMultiplicationPicked(playerDataManager.GetNumMultiplicationPicked() + 1);
+
         privateVariables.TimeRemaining = 20f;
         privateVariables.OperatorType = 2;
         uiLoader.LoadUIByContainerIndex(2);
@@ -87,6 +94,8 @@ public class OperationPickerManager : MonoBehaviour
     }
     private void OnDivisionPress()
     {
+        playerDataManager.SetNumDivisionPicked(playerDataManager.GetNumDivisionPicked() + 1);
+
         privateVariables.TimeRemaining = 20f;
         privateVariables.OperatorType = 3;
         uiLoader.LoadUIByContainerIndex(2);

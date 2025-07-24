@@ -5,12 +5,23 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
-    public string playerName;
+    public string IsGamified;
     public int currentGold;
     public bool[] unlockedPets = new bool[8];
     public string currentPet;
     public int currentLevel;
-    public int xp ;
+    public int xp;
+    public float totalTimePlayed;
+    public int numQuestionsAnswered;
+    public int numQuestionsAnsweredCorrect;
+    public int numAdditionPicked;
+    public int numSubtractionPicked;
+    public int numMultiplicationPicked;
+    public int numDivisionPicked;
+    public int numEasyPicked;
+    public int numMediumPicked;
+    public int numHardPicked;
+    public int numVeryHardPicked;
 }
 
 // Manager to handle saving and loading player data
@@ -21,7 +32,7 @@ public class PlayerDataManager : MonoBehaviour
     void Awake()
     {
         // Set the file path where the player data will be stored
-        filePath = Path.Combine(Application.persistentDataPath, "playerData.json");
+        filePath = Path.Combine(Application.persistentDataPath, "playerDataGamified.json");
 
         // Debug log to check the file path
         Debug.Log("Persistent Data Path: " + filePath);
@@ -80,7 +91,7 @@ public class PlayerDataManager : MonoBehaviour
         if (GetPlayerDataManager())
         {
             PlayerData player = LoadPlayerData();
-            return player.playerName;
+            return player.IsGamified;
         }
         return null;
     }
@@ -89,7 +100,7 @@ public class PlayerDataManager : MonoBehaviour
         if (GetPlayerDataManager())
         {
             PlayerData player = LoadPlayerData();
-            player.playerName = name;
+            player.IsGamified = name;
             SavePlayerData(player);
         }
     }
@@ -180,6 +191,225 @@ public class PlayerDataManager : MonoBehaviour
         {
             PlayerData player = LoadPlayerData();
             player.xp = xp;
+            SavePlayerData(player);
+        }
+    }
+    public float GetTotalTimePlayed()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.totalTimePlayed;
+        }
+        return 0f;
+    }
+
+    public void SetTotalTimePlayed(float time)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.totalTimePlayed = time;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumQuestionsAnswered()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numQuestionsAnswered;
+        }
+        return 0;
+    }
+
+    public void SetNumQuestionsAnswered(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numQuestionsAnswered = num;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumQuestionsAnsweredCorrect()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numQuestionsAnsweredCorrect;
+        }
+        return 0;
+    }
+
+    public void SetNumQuestionsAnsweredCorrect(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numQuestionsAnsweredCorrect = num;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumAdditionPicked()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numAdditionPicked;
+        }
+        return 0;
+    }
+
+    public void SetNumAdditionPicked(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numAdditionPicked = num;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumSubtractionPicked()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numSubtractionPicked;
+        }
+        return 0;
+    }
+
+    public void SetNumSubtractionPicked(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numSubtractionPicked = num;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumMultiplicationPicked()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numMultiplicationPicked;
+        }
+        return 0;
+    }
+
+    public void SetNumMultiplicationPicked(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numMultiplicationPicked = num;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumDivisionPicked()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numDivisionPicked;
+        }
+        return 0;
+    }
+
+    public void SetNumDivisionPicked(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numDivisionPicked = num;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumEasyPicked()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numEasyPicked;
+        }
+        return 0;
+    }
+
+    public void SetNumEasyPicked(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numEasyPicked = num;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumMediumPicked()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numMediumPicked;
+        }
+        return 0;
+    }
+
+    public void SetNumMediumPicked(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numMediumPicked = num;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumHardPicked()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numHardPicked;
+        }
+        return 0;
+    }
+
+    public void SetNumHardPicked(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numHardPicked = num;
+            SavePlayerData(player);
+        }
+    }
+
+    public int GetNumVeryHardPicked()
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            return player.numVeryHardPicked;
+        }
+        return 0;
+    }
+
+    public void SetNumVeryHardPicked(int num)
+    {
+        if (GetPlayerDataManager())
+        {
+            PlayerData player = LoadPlayerData();
+            player.numVeryHardPicked = num;
             SavePlayerData(player);
         }
     }
